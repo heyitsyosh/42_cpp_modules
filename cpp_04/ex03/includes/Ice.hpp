@@ -1,8 +1,11 @@
 #ifndef ICE_HPP
 #define ICE_HPP
 
+// Local headers
 #include "AMateria.hpp"
-#include "Character.hpp"
+
+// Forward declarations
+class Character;
 
 class Ice : public AMateria {
 public:

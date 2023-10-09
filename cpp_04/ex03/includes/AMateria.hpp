@@ -1,8 +1,11 @@
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-#include "Character.hpp"
+// STL headers
 #include <string>
+
+// Forward declarations
+class ICharacter;
 
 class AMateria {
 public:
@@ -11,9 +14,9 @@ public:
 	AMateria(const AMateria &other);
 	AMateria &operator=(const AMateria &other);
 	virtual ~AMateria();
-	std::string const &getType() const; //Returns the materia type
+	std::string const &getType() const;
 	virtual AMateria *clone() const = 0;
-	virtual void use(ICharacter& target);
+	virtual void use(ICharacter &target);
 protected:
 	std::string type;
 };

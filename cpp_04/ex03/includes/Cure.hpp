@@ -1,8 +1,11 @@
 #ifndef CURE_HPP
 #define CURE_HPP
 
+// Local headers
 #include "AMateria.hpp"
-#include "Character.hpp"
+
+// Forward declarations
+class Character;
 
 class Cure : public AMateria {
 public:
