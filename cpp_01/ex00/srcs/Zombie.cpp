@@ -2,14 +2,10 @@
 #include <iostream> //cout, endl
 
 Zombie::Zombie(std::string name)
-: _name(name)
-{
-}
+: _name(name) {}
 
 Zombie::Zombie()
-: _name("")
-{
-}
+: _name("") {}
 
 Zombie::~Zombie() {
 	std::cout << _name << ": *dies*" << std::endl;

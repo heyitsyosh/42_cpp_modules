@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 #include <iostream> //cerr, endl
-#include <new> //new, bad_alloc
+#include <new> //bad_alloc
 #include <cstdlib> //exit
 
 Zombie *newZombie(std::string name) {

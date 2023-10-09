@@ -1,10 +1,9 @@
 #include "HumanA.hpp"
+#include "Weapon.hpp"
 #include <iostream> //cout, endl
 
 HumanA::HumanA(std::string name, Weapon &weapon)
-: _name(name), _weapon(weapon)
-{
-}
+: _name(name), _weapon(weapon) {}
 
 HumanA::~HumanA() {}
 

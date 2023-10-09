@@ -18,7 +18,7 @@ ScavTrap::ScavTrap(std::string name)
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) 
-:	ClapTrap(other), _guarding_gate(other._guarding_gate) {
+: ClapTrap(other), _guarding_gate(other._guarding_gate) {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
@@ -35,7 +35,7 @@ ScavTrap::~ScavTrap()  {
 	std::cout << "ScavTrap default destructor called" << std::endl;
 }
 
-void ScavTrap::attack(const std::string& target) {
+void ScavTrap::attack(const std::string &target) {
 	if (_energy_points && _hp > 0) {
 		std::cout	<< "ScavTrap " << _name << " attacks " << target 
 			<< ", causing " <<  _attack_damage << " points of damage!"

@@ -35,7 +35,7 @@ ClapTrap::~ClapTrap()  {
 	std::cout << "ClapTrap default destructor called" << std::endl;
 }
 
-void ClapTrap::attack(const std::string& target) {
+void ClapTrap::attack(const std::string &target) {
 	if (_energy_points && _hp > 0) {
 		std::cout	<< "ClapTrap " << _name << " attacks " << target 
 			<< ", causing " <<  _attack_damage << " points of damage!"

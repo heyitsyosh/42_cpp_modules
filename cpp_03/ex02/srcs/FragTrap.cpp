@@ -2,7 +2,7 @@
 #include <iostream> //cout, endl
 
 FragTrap::FragTrap() 
-:	ClapTrap() {
+: ClapTrap() {
 	_hp = 100;
 	_energy_points = 100;
 	_attack_damage = 30;
@@ -10,7 +10,7 @@ FragTrap::FragTrap()
 }
 
 FragTrap::FragTrap(std::string name) 
-:	ClapTrap(name) {
+: ClapTrap(name) {
 	_hp = 100;
 	_energy_points = 100;
 	_attack_damage = 30;
@@ -18,7 +18,7 @@ FragTrap::FragTrap(std::string name)
 }
 
 FragTrap::FragTrap(const FragTrap &other)
-:	ClapTrap(other) {
+: ClapTrap(other) {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 }
 

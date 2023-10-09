@@ -7,11 +7,10 @@
 # define RESET "\033[0m"
 
 void ClapTrapTests(const std::string &player) {
-	std::cout << GREEN << "[ClapTrap Tests]" << RESET << std::endl;
+	std::cout << GREEN "[ClapTrap Tests]" RESET << std::endl;
 	ClapTrap claptrap("CL4P-TP");
 	std::endl(std::cout);
 
-	//tests
 	claptrap.attack(player);
 	claptrap.beRepaired(UINT_MAX);
 	claptrap.beRepaired(1);
@@ -20,20 +19,17 @@ void ClapTrapTests(const std::string &player) {
 		claptrap.attack("[filler to use up energy points]");
 	claptrap.beRepaired(1);
 	claptrap.attack(player);
-
 	std::endl(std::cout);
 }
 
 void ScavTrapTests(const std::string &player) {
-	std::cout << GREEN << "[ScavTrap Tests]" << RESET << std::endl;
+	std::cout << GREEN "[ScavTrap Tests]" RESET << std::endl;
 	ScavTrap scavtrap("SC4V-TP");
 	std::endl(std::cout);
 
-	//tests
 	scavtrap.attack(player);
 	scavtrap.guardGate();
 	scavtrap.guardGate();
-
 	std::endl(std::cout);
 }
 

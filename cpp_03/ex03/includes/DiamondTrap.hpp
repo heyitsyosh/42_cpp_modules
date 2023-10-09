@@ -12,7 +12,7 @@ public:
 	DiamondTrap &operator=(const DiamondTrap &other);
 	~DiamondTrap();
 	void whoAmI() const;
-	void attack(const std::string& target);
+	void attack(const std::string &target);
 protected:
 	std::string _name;
 };

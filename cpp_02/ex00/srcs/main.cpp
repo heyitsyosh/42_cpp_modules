@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 #include <iostream> //cout, endl
 
-int main(void) {
+int main() {
 	Fixed a;
 	Fixed b(a);
 	Fixed c;

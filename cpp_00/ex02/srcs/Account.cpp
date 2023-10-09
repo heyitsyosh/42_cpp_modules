@@ -9,8 +9,7 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 Account::Account( int initial_deposit )
-: _nbDeposits(0), _nbWithdrawals(0) 
-{
+: _nbDeposits(0), _nbWithdrawals(0)  {
 	_amount = initial_deposit;
 	_accountIndex = _nbAccounts;
 	_nbAccounts += 1;
@@ -22,9 +21,7 @@ Account::Account( int initial_deposit )
 }
 
 Account::Account( void )
-: _accountIndex(0), _amount(0), _nbDeposits(0), _nbWithdrawals(0)
-{
-}
+: _accountIndex(0), _amount(0), _nbDeposits(0), _nbWithdrawals(0) {}
 
 Account::~Account( void ) {
 	_displayTimestamp();

@@ -1,8 +1,9 @@
 #ifndef HUMAN_B_HPP
 #define HUMAN_B_HPP
 
-#include "Weapon.hpp"
 #include <string>
+
+class Weapon;
 
 class HumanB {
 public:

@@ -3,7 +3,7 @@
 #include <climits>  // UINT_MAX
 
 ClapTrap::ClapTrap() 
-:_name(""), _hp(10), _energy_points(10), _attack_damage(0) {
+: _name(""), _hp(10), _energy_points(10), _attack_damage(0) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
@@ -35,7 +35,7 @@ ClapTrap::~ClapTrap()  {
 	std::cout << "ClapTrap default destructor called" << std::endl;
 }
 
-void ClapTrap::attack(const std::string& target) {
+void ClapTrap::attack(const std::string &target) {
 	if (_energy_points && _hp > 0) {
 		std::cout	<< "ClapTrap " << _name << " attacks " << target 
 			<< ", causing " <<  _attack_damage << " points of damage!"

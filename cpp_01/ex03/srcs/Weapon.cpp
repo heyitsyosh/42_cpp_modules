@@ -3,9 +3,7 @@
 Weapon::Weapon() {}
 
 Weapon::Weapon(std::string type)
-: _type(type)
-{
-}
+: _type(type) {}
 
 Weapon::~Weapon() {}
 

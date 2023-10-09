@@ -2,7 +2,7 @@
 #include <iostream> //cout, endl
 
 DiamondTrap::DiamondTrap()
-:	ClapTrap(), ScavTrap(), FragTrap(), _name("") {
+: ClapTrap(), ScavTrap(), FragTrap(), _name("") {
 	_hp = FragTrap::_hp;
 	_energy_points = ScavTrap::_energy_points;
 	_attack_damage = FragTrap::_attack_damage;
@@ -10,7 +10,7 @@ DiamondTrap::DiamondTrap()
 }
 
 DiamondTrap::DiamondTrap(std::string name)
-:	ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name) {
+: ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name) {
 	_hp = FragTrap::_hp;
 	_energy_points = ScavTrap::_energy_points;
 	_attack_damage = FragTrap::_attack_damage;
@@ -18,7 +18,7 @@ DiamondTrap::DiamondTrap(std::string name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other) 
-:	ClapTrap(other), ScavTrap(other), FragTrap(other), _name(other._name){
+: ClapTrap(other), ScavTrap(other), FragTrap(other), _name(other._name){
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
@@ -45,6 +45,6 @@ void DiamondTrap::whoAmI() const {
 		std::cout	<< "DiamondTrap " << _name << "doesn't have self-awareness, it's dead!" << std::endl;
 }
 
-void DiamondTrap::attack(const std::string& target) {
+void DiamondTrap::attack(const std::string &target) {
 	ScavTrap::attack(target);
 }

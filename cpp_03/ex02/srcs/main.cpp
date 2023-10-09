@@ -8,11 +8,10 @@
 # define RESET "\033[0m"
 
 void ClapTrapTests(const std::string &player) {
-	std::cout << GREEN << "[ClapTrap Tests]" << RESET << std::endl;
+	std::cout << GREEN "[ClapTrap Tests]" RESET << std::endl;
 	ClapTrap claptrap("CL4P-TP");
 	std::endl(std::cout);
 
-	//tests
 	claptrap.attack(player);
 	claptrap.beRepaired(UINT_MAX);
 	claptrap.beRepaired(1);
@@ -21,32 +20,27 @@ void ClapTrapTests(const std::string &player) {
 		claptrap.attack("[filler to use up energy points]");
 	claptrap.beRepaired(1);
 	claptrap.attack(player);
-
 	std::endl(std::cout);
 }
 
 void ScavTrapTests(const std::string &player) {
-	std::cout << GREEN << "[ScavTrap Tests]" << RESET << std::endl;
+	std::cout << GREEN "[ScavTrap Tests]" RESET << std::endl;
 	ScavTrap scavtrap("SC4V-TP");
 	std::endl(std::cout);
 
-	//tests
 	scavtrap.guardGate();
 	scavtrap.guardGate();
 	scavtrap.attack(player);
-
 	std::endl(std::cout);
 }
 
 void FragTrapTests(const std::string &player) {
-	std::cout << GREEN << "[FragTrap Tests]" << RESET << std::endl;
+	std::cout << GREEN "[FragTrap Tests]" RESET << std::endl;
 	FragTrap fragtrap("FR4G-TP");
 	std::endl(std::cout);
 
-	//tests
 	fragtrap.attack(player);
 	fragtrap.highFivesGuys();
-
 	std::endl(std::cout);
 }
 
@@ -55,9 +49,7 @@ int main() {
 
 	ClapTrapTests(player);
 	std::endl(std::cout);
-
 	ScavTrapTests(player);
 	std::endl(std::cout);
-
 	FragTrapTests(player);
 }

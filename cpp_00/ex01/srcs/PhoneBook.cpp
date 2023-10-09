@@ -6,9 +6,7 @@
 #include <sstream> //istringstream
 
 PhoneBook::PhoneBook()
-: entry_index(0), entry_count(0)
-{
-}
+: entry_index(0), entry_count(0) {}
 
 PhoneBook::~PhoneBook() {}
 
