@@ -1,10 +1,11 @@
 #include "Cat.hpp"
+#include "Brain.hpp"
 #include <iostream> //cout, endl
-#include <new> //new, bad_alloc
+#include <new> //bad_alloc
 #include <cstdlib> //exit
 
 Cat::Cat() 
-:	Animal() {
+: Animal() {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->type = "Cat";
 	try {
@@ -17,7 +18,7 @@ Cat::Cat()
 }
 
 Cat::Cat(const Cat &other)
-:	Animal(other), brain(NULL) {
+: Animal(other), brain(NULL) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	try {
 		this->brain = new Brain(*other.brain);

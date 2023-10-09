@@ -2,9 +2,9 @@
 #include <iostream> //cout, endl
 
 Dog::Dog()
-:	Animal() {
-	this->type = "Dog";
+: Animal() {
 	std::cout << "Dog default constructor called" << std::endl;
+	this->type = "Dog";
 }
 
 Dog::Dog(const Dog &other) 

@@ -3,7 +3,6 @@
 #include "Dog.hpp"
 #include <iostream> //cout, cerr, endl
 #include <sstream> //stringstream
-#include <new> //new, bad_alloc
 // #include <cstdlib> //system
 
 # define GREEN "\033[32m"
@@ -12,7 +11,7 @@
 # define NUM_OF_ANIMALS 4
 
 void test1() {
-	std::cout << GREEN << "[Test 1]" << RESET << std::endl;
+	std::cout << GREEN "[Test 1]" RESET << std::endl;
 	const Animal *j = new Dog();
 	const Animal *i = new Cat();
 	std::endl(std::cout);
@@ -22,7 +21,7 @@ void test1() {
 }
 
 void test2() {
-	std::cout << GREEN << "[Test 2]" << RESET << std::endl;
+	std::cout << GREEN "[Test 2]" RESET << std::endl;
 	const Animal *animals[6];
 
 	for (int i = 0; i < NUM_OF_ANIMALS / 2; i++)
@@ -42,7 +41,7 @@ std::string iToStr(int i) {
 }
 
 void test3() {
-	std::cout << GREEN << "[Test 3]" << RESET << std::endl;
+	std::cout << GREEN "[Test 3]" RESET << std::endl;
 	Cat cat;
 	std::endl(std::cout);
 

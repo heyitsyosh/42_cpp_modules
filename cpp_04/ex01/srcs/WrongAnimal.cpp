@@ -2,12 +2,12 @@
 #include <iostream> //cout, endl
 
 WrongAnimal::WrongAnimal() 
-:	type("") {
+: type("") {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other) 
-:	type(other.type) {
+: type(other.type) {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
 }
 

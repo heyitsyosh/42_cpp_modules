@@ -2,13 +2,13 @@
 #include <iostream> //cout, endl
 
 Cat::Cat() 
-:	Animal() {
-	this->type = "Cat";
+: Animal() {
 	std::cout << "Cat default constructor called" << std::endl;
+	this->type = "Cat";
 }
 
 Cat::Cat(const Cat &other) 
-:	Animal(other) {
+: Animal(other) {
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 

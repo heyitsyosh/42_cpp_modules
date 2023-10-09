@@ -2,9 +2,10 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal{
+class Brain;
+
+class Cat : public Animal {
 public:
 	Cat();
 	Cat(const Cat &other);

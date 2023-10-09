@@ -1,10 +1,11 @@
 #include "Cat.hpp"
+#include "Brain.hpp"
 #include <iostream> //cout, endl
-#include <new> //new, bad_alloc
+#include <new> //bad_alloc
 #include <cstdlib> //exit
 
 Cat::Cat() 
-:	AAnimal() {
+: AAnimal() {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->type = "Cat";
 	try {
