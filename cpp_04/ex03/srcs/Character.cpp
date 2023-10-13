@@ -70,6 +70,12 @@ void Character::unequip(int idx) {
 		std::cout << "Cannot unequip, index out of range!" << std::endl;
 		return;
 	}
+	if (materias[idx]) {
+		std::cout << "Unequipped " << materias[idx]->getType() << " materia!" << std::endl;
+		materias[idx] = NULL;
+		return;
+	}
+	std::cout << "Cannot unequip, no materia equipped in slot!" << std::endl;
 }
 
 void Character::use(int idx, ICharacter &target) {
@@ -77,11 +83,8 @@ void Character::use(int idx, ICharacter &target) {
 		std::cout << "Cannot use, index out of range!" << std::endl;
 		return;
 	}
-	if (materias[idx]) {
+	if (materias[idx])
 		materias[idx]->use(target);
-	}
-	else {
+	else
 		std::cout << "Cannot use, no materia equipped in slot!" << std::endl;
-		return;
-	}
 }

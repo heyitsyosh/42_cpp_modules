@@ -38,13 +38,13 @@ void test2() {
 	IMateriaSource* src = new MateriaSource();
 	ICharacter* me = new Character("me");
 	Cure *cures[MAX_MATERIAS + 1];
-	AMateria* tmp;
+	AMateria* tmp[MAX_MATERIAS + 1];
 
 	for (int i = 0; i < MAX_MATERIAS + 1; i++)
 		cures[i] = new Cure();
 
-	tmp = src->createMateria("fire");
-	tmp = src->createMateria("cure");
+	tmp[0] = src->createMateria("fire");
+	tmp[0] = src->createMateria("cure");
 	std::endl(std::cout);
 
 	for (int i = 0; i < MAX_MATERIAS + 1; i++)
@@ -55,16 +55,22 @@ void test2() {
 	std::endl(std::cout);
 
 	for (int i = 0; i < MAX_MATERIAS + 1; i++) {
-		tmp = src->createMateria("cure");
-		me->equip(tmp);
+		tmp[i] = src->createMateria("cure");
+		me->equip(tmp[i]);
 	}
 	std::endl(std::cout);
 
+	me->unequip(1);
+	me->use(1, *me);
+	std::endl(std::cout);
+
+	me->unequip(MAX_MATERIAS + 1);
 	me->use(MAX_MATERIAS, *me);
 
-	delete me;
 	delete src;
-	delete tmp;
+	delete me;
+	delete tmp[1];
+	delete tmp[MAX_MATERIAS];
 	delete cures[MAX_MATERIAS];
 }
 
