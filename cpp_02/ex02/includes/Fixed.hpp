@@ -1,7 +1,5 @@
-#ifndef FIXED_HP
-# define FIXED_HPP
-
-#include <string>
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 class Fixed {
 public:
@@ -15,16 +13,16 @@ public:
 	void setRawBits(int const raw);
 	float toFloat() const;
 	int toInt() const;
-	bool operator<(Fixed const &rhs) const;
-	bool operator>(Fixed const &rhs) const;
-	bool operator<=(Fixed const &rhs) const;
-	bool operator>=(Fixed const &rhs) const;
-	bool operator==(Fixed const &rhs) const;
-	bool operator!=(Fixed const &rhs) const;
-	Fixed operator+(Fixed const &rhs);
-	Fixed operator-(Fixed const &rhs);
-	Fixed operator*(Fixed const &rhs);
-	Fixed operator/(Fixed const &rhs);
+	bool operator<(Fixed const &other) const;
+	bool operator>(Fixed const &other) const;
+	bool operator<=(Fixed const &other) const;
+	bool operator>=(Fixed const &other) const;
+	bool operator==(Fixed const &other) const;
+	bool operator!=(Fixed const &other) const;
+	Fixed operator+(Fixed const &other);
+	Fixed operator-(Fixed const &other);
+	Fixed operator*(Fixed const &other);
+	Fixed operator/(Fixed const &other);
 	Fixed &operator++();
 	Fixed &operator--();
 	Fixed operator++(int);

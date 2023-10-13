@@ -1,7 +1,7 @@
-#ifndef FIXED_HP
-# define FIXED_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-#include <string>
+#include <iostream> //ostream
 
 class Fixed {
 public:
@@ -19,5 +19,7 @@ private:
 	int raw_value;
 	static const int fractional_bits = 8;
 };
+
+std::ostream &operator<<(std::ostream& ostream, const Fixed& value);
 
 #endif
