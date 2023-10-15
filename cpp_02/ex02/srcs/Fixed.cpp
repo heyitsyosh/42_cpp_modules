@@ -1,31 +1,19 @@
 #include "Fixed.hpp"
 #include <cmath> //roundf
-#include <climits> //INT_MAX, INT_MIN
 
-Fixed::Fixed() 
-: raw_value(0) {
-	// std::cout << "Default constructor called" << std::endl;
-}
+Fixed::Fixed(): raw_value(0) {}
 
 Fixed::Fixed(const int int_value) {
-	// std::cout << "Parameterized constructor called" << std::endl;
 	raw_value = int_value << fractional_bits;
-	if (raw_value >> fractional_bits != int_value)
-		raw_value = (int_value > 0) ? INT_MAX : INT_MIN;
 }
 
 Fixed::Fixed(const float float_value) {
-	// std::cout << "Parameterized constructor called" << std::endl;
 	raw_value = roundf(float_value * (1 << fractional_bits));
 }
 
-Fixed::Fixed(const Fixed &other) 
-: raw_value(other.raw_value) {
-	// std::cout << "Copy constructor called" << std::endl;
-}
+Fixed::Fixed(const Fixed &other): raw_value(other.raw_value) {}
 
 Fixed &Fixed::operator=(const Fixed &other) {
-	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		raw_value = other.raw_value;
 	return *this;
@@ -35,12 +23,9 @@ std::ostream &operator<<(std::ostream &ostream, const Fixed &other) {
 	return ostream << other.toFloat();
 }
 
-Fixed::~Fixed() {
-	// std::cout << "Destructor called" << std::endl;
-}
+Fixed::~Fixed() {}
 
 int Fixed::getRawBits() const {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return raw_value;
 }
 
@@ -53,9 +38,7 @@ float Fixed::toFloat() const {
 }
 
 int Fixed::toInt() const {
-	if (raw_value > 0)
-		return raw_value >> fractional_bits;
-	return (raw_value + (1 << (fractional_bits - 1))) >> fractional_bits;
+	return raw_value >> fractional_bits;
 }
 
 
@@ -98,23 +81,21 @@ Fixed Fixed::operator-(Fixed const &other) {
 }
 
 Fixed Fixed::operator*(Fixed const &other) {
-	//implement
-	Fixed ret;
+	long long product = (raw_value * other.raw_value) >> fractional_bits;
 
-	(void)other;
+	Fixed ret;
+	ret.setRawBits(static_cast<int>(product));	
 	return ret;
 }
 
 Fixed Fixed::operator/(Fixed const &other) {
-	//implement
-	Fixed ret;
-
-	ret.setRawBits(raw_value / other.raw_value);
-	return ret;
+	if (other.raw_value == 0)
+		return Fixed(0);
+	return Fixed(this->toFloat() / other.toFloat());
 }
 
 Fixed& Fixed::operator++() {
-	++raw_value;
+	raw_value++;
 	return *this;
 }
 

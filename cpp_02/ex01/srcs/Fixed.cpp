@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 #include <cmath> //roundf
-#include <climits> //INT_MAX, INT_MIN
 
 Fixed::Fixed() 
 : raw_value(0) {
@@ -8,16 +7,13 @@ Fixed::Fixed()
 }
 
 Fixed::Fixed(const int int_value) {
-	std::cout << "Parameterized constructor called" << std::endl;
-	raw_value = int_value << fractional_bits; //multiplying by 256
-	if (raw_value >> fractional_bits != int_value)
-		raw_value = (int_value > 0) ? INT_MAX : INT_MIN;
+	std::cout << "Int constructor called" << std::endl;
+	raw_value = int_value << fractional_bits;
 }
 
 Fixed::Fixed(const float float_value) {
-	std::cout << "Parameterized constructor called" << std::endl;
-	raw_value = roundf(float_value * (1 << fractional_bits)); //same meaning, but cannot apply bitshift to float
-	//handle overflow?
+	std::cout << "Float constructor called" << std::endl;
+	raw_value = roundf(float_value * (1 << fractional_bits));
 }
 
 Fixed::Fixed(const Fixed &other) 
@@ -53,12 +49,6 @@ float Fixed::toFloat() const {
 	return static_cast<float>(raw_value) / (1 << fractional_bits);
 }
 
-//-0.1
-//1000 0000 0000 0001
-//1111 1111 1000 0000
-//bit shifting negative is arithmetic (fills left with 1)
 int Fixed::toInt() const {
-	if (raw_value > 0)
-		return raw_value >> fractional_bits;
-	return (raw_value + (1 << (fractional_bits - 1))) >> fractional_bits;
+	return raw_value >> fractional_bits;
 }
