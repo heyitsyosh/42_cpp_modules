@@ -51,8 +51,10 @@ void DiamondTrapTests(const std::string &player) {
 	DiamondTrap diamondtrap("DI4M0ND-TP");
 	std::endl(std::cout);
 
+	diamondtrap.printAttributes();
 	diamondtrap.attack(player);
 	diamondtrap.whoAmI();
+
 	std::endl(std::cout);
 }
 
