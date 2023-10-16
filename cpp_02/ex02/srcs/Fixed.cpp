@@ -41,7 +41,6 @@ int Fixed::toInt() const {
 	return raw_value >> fractional_bits;
 }
 
-
 bool Fixed::operator<(Fixed const &other) const {
 	return (raw_value < other.raw_value);
 }
