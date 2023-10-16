@@ -12,7 +12,7 @@ OBJS = $(addprefix $(OBJS_DIR)/, $(SRC_FILES:=.o))
 DEPS = $(OBJS:.o=.d)
 
 CFLAGS = -Wall -Wextra -Werror
-CPPFLAGS = -std=c++98  -MMD -MP
+CPPFLAGS = -std=c++98 -MMD -MP
 INCLUDES = -I ./includes
 
 #--------------------------------------------------------------------------#
@@ -29,10 +29,9 @@ $(NAME): $(OBJS)
 	c++ $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 clean:
-	$(RM) $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
-	rm -rf $(OBJS_DIR)
 	$(RM) $(NAME)
 
 re: fclean all

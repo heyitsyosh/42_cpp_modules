@@ -28,10 +28,9 @@ $(NAME): $(OBJS)
 	c++ $(CFLAGS) $^ -o $@
 
 clean:
-	$(RM) $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
-	rm -rf $(OBJS_DIR)
 	$(RM) $(NAME)
 
 re: fclean all
