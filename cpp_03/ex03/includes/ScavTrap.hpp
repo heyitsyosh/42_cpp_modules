@@ -14,6 +14,9 @@ public:
 	void guardGate();
 protected:
 	bool _guarding_gate;
+	static const int default_hp = 100;
+	static const int default_energy_points = 50;
+	static const int default_attack_damage = 20;
 };
 
 #endif

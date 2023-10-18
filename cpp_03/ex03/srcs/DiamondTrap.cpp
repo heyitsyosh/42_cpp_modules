@@ -3,17 +3,17 @@
 
 DiamondTrap::DiamondTrap()
 : ClapTrap(), ScavTrap(), FragTrap(), _name("") {
-	_hp = FragTrap::_hp;
-	_energy_points = ScavTrap::_energy_points;
-	_attack_damage = FragTrap::_attack_damage;
+	_hp = FragTrap::default_hp;
+	_energy_points = ScavTrap::default_energy_points;
+	_attack_damage = FragTrap::default_attack_damage;
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name)
 : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name) {
-	_hp = FragTrap::_hp;
-	_energy_points = ScavTrap::_energy_points;
-	_attack_damage = FragTrap::_attack_damage;
+	_hp = FragTrap::default_hp;
+	_energy_points = ScavTrap::default_energy_points;
+	_attack_damage = FragTrap::default_attack_damage;
 	std::cout << "DiamondTrap parameterized constructor called" << std::endl;
 }
 
@@ -47,4 +47,10 @@ void DiamondTrap::whoAmI() const {
 
 void DiamondTrap::attack(const std::string &target) {
 	ScavTrap::attack(target);
+}
+
+void DiamondTrap::printAttributes() const {
+	std::cout	<< "HP:" << _hp 
+				<< " Energy Points: " << _energy_points 
+				<< " Attack Damage: "  <<  _attack_damage << std::endl;
 }

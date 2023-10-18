@@ -13,7 +13,8 @@ public:
 	~DiamondTrap();
 	void whoAmI() const;
 	void attack(const std::string &target);
-protected:
+	void printAttributes() const;
+private:
 	std::string _name;
 };
 
