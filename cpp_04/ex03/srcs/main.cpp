@@ -51,13 +51,12 @@ void test2() {
 		src->learnMateria(cures[i]);
 	std::endl(std::cout);
 
-	me->use(0, *me);
+	for (int i = 0; i < MAX_MATERIAS + 1; i++)
+		tmp[i] = src->createMateria("cure");
 	std::endl(std::cout);
 
-	for (int i = 0; i < MAX_MATERIAS + 1; i++) {
-		tmp[i] = src->createMateria("cure");
+	for (int i = 0; i < MAX_MATERIAS + 1; i++)
 		me->equip(tmp[i]);
-	}
 	std::endl(std::cout);
 
 	me->unequip(1);
