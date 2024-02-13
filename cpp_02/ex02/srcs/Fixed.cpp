@@ -65,27 +65,27 @@ bool Fixed::operator!=(Fixed const &other) const {
 	return (raw_value != other.raw_value);
 }
 
-Fixed Fixed::operator+(Fixed const &other) {
+Fixed Fixed::operator+(Fixed const &other) const {
 	Fixed result;
 	result.setRawBits(raw_value + other.raw_value);
 	return result;
 }
 
-Fixed Fixed::operator-(Fixed const &other) {
+Fixed Fixed::operator-(Fixed const &other) const {
 	Fixed result;
 	result.setRawBits(raw_value - other.raw_value);
 	return result;
 }
 
-Fixed Fixed::operator*(Fixed const &other) {
-	long long product = static_cast<long long>(raw_value) * other.raw_value;
+Fixed Fixed::operator*(Fixed const &other) const {
+	long product = static_cast<long>(raw_value) * other.raw_value;
 
 	Fixed ret;
 	ret.setRawBits(static_cast<int>(product >> fractional_bits));	
 	return ret;
 }
 
-Fixed Fixed::operator/(Fixed const &other) {
+Fixed Fixed::operator/(Fixed const &other) const {
 	if (other.raw_value == 0)
 		return Fixed(0);
 

@@ -20,10 +20,10 @@ public:
 	bool operator>=(Fixed const &other) const;
 	bool operator==(Fixed const &other) const;
 	bool operator!=(Fixed const &other) const;
-	Fixed operator+(Fixed const &other);
-	Fixed operator-(Fixed const &other);
-	Fixed operator*(Fixed const &other);
-	Fixed operator/(Fixed const &other);
+	Fixed operator+(Fixed const &other) const;
+	Fixed operator-(Fixed const &other) const;
+	Fixed operator*(Fixed const &other) const;
+	Fixed operator/(Fixed const &other) const;
 	Fixed &operator++();
 	Fixed &operator--();
 	Fixed operator++(int);
