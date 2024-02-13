@@ -11,7 +11,7 @@ SRCS = $(foreach src,$(SRC_FILES), $(SRCS_DIR)/$(src).cpp)
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRC_FILES:=.o))
 DEPS = $(OBJS:.o=.d)
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 INCLUDES = -I ./includes
 
 #--------------------------------------------------------------------------#

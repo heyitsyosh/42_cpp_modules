@@ -14,7 +14,7 @@ OBJS = $(addprefix $(OBJS_DIR)/, $(SRC_FILES:=.o))
 DEPS = $(OBJS:.o=.d)
 
 CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
-CPPFLAGS = -std=c++98 -MMD -MP
+CPPFLAGS = -std=c++98 -MMD -MP -pedantic
 INCLUDES = -I ./includes
 
 #--------------------------------------------------------------------------#
