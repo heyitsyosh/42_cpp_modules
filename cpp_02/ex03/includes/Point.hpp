@@ -20,7 +20,7 @@ private:
 	const Fixed y;
 };
 
-std::ostream &operator<<(std::ostream& ostream, const Point& value);
+std::ostream &operator<<(std::ostream &ostream, const Point &value);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

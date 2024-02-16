@@ -37,6 +37,6 @@ Point Point::operator-(const Point &other) {
 	return result;
 }
 
-std::ostream &operator<<(std::ostream& ostream, const Point& point) {
+std::ostream &operator<<(std::ostream &ostream, const Point &point) {
 	return ostream << "(" << point.getX() << ", " << point.getY() << ")";
 }

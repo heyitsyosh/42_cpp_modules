@@ -37,6 +37,6 @@ private:
 	static const int fractional_bits = 8;
 };
 
-std::ostream &operator<<(std::ostream& ostream, const Fixed& value);
+std::ostream &operator<<(std::ostream &ostream, const Fixed &value);
 
 #endif
