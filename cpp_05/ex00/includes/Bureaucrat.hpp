@@ -4,9 +4,7 @@
 // STL headers
 #include <string>
 #include <iostream> //ostream
-
-#define HIGHEST_GRADE 1
-#define LOWEST_GRADE 150
+#include <exception>
 
 class Bureaucrat {
 public:
@@ -21,13 +19,15 @@ public:
 	void decrementGrade();
 	class GradeTooHighException: public std::exception {
 		public:
-			virtual const char* what() const throw();
+			virtual const char *what() const throw();
 	};
 	class GradeTooLowException: public std::exception {
 		public:
-			virtual const char* what() const throw();
+			virtual const char *what() const throw();
 	};
 private:
+	static const int highest_grade = 1;
+	static const int lowest_grade = 150;
 	const std::string name;
 	int grade;
 };

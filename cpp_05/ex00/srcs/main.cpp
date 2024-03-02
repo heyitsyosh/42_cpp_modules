@@ -5,14 +5,15 @@
 
 void test1() {
 	std::cout << GREEN "[Test 1]" RESET << std::endl;
-	Bureaucrat standard_bureaucrat;
+	Bureaucrat default_bureaucrat;
 
-	std::cout << standard_bureaucrat << std::endl;
+	std::cout << default_bureaucrat << std::endl;
 }
 
+// Testing decrementing lowest grade
 void test2() {
 	std::cout << GREEN "[Test 2]" RESET << std::endl;
-	Bureaucrat winston("Winston Smith", LOWEST_GRADE);
+	Bureaucrat winston("Winston Smith", 150);
 
 	std::cout << winston << std::endl;
 	try {
@@ -24,9 +25,10 @@ void test2() {
 	}
 }
 
+// Testing incrementing highest grade
 void test3() {
-	std::cout << GREEN "[Test 2]" RESET << std::endl;
-	Bureaucrat winston("Winston Smith", HIGHEST_GRADE);
+	std::cout << GREEN "[Test 3]" RESET << std::endl;
+	Bureaucrat winston("Winston Smith", 1);
 
 	std::cout << winston << std::endl;
 	try {
