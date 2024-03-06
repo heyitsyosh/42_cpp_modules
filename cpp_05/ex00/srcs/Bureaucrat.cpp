@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(): name("default"), grade(lowest_grade) {}
+Bureaucrat::Bureaucrat(): name("Default"), grade(lowest_grade) {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 : name(name), grade(grade)
@@ -29,14 +29,6 @@ int Bureaucrat::getGrade() const {
 	return grade;
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high";
-}
-
-const char *Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too low";
-}
-
 void Bureaucrat::incrementGrade() {
 	if (grade == highest_grade)
 		throw Bureaucrat::GradeTooHighException();
@@ -47,6 +39,14 @@ void Bureaucrat::decrementGrade() {
 	if (grade == lowest_grade)
 		throw Bureaucrat::GradeTooLowException();
 	grade++;
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Grade is too high";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Grade is too low";
 }
 
 std::ostream &operator<<(std::ostream &ostream, const Bureaucrat &bureaucrat) {
