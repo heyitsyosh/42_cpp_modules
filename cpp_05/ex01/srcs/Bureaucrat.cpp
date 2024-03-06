@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(): name("default"), grade(lowest_grade) {}
+Bureaucrat::Bureaucrat(): name("Default"), grade(lowest_grade) {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 : name(name), grade(grade)
