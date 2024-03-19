@@ -5,6 +5,7 @@ SRCS_DIR = ./srcs
 
 SRCS = $(shell find $(SRCS_DIR) -name *.cpp)
 OBJS := $(patsubst $(SRCS_DIR)/%.cpp, $(OBJS_DIR)/%.o, $(SRCS))
+SHRUB_FILES = $(shell find . -name *_shrubbery)
 DEPS = $(OBJS:.o=.d)
 
 CFLAGS = -Wall -Wextra -Werror
@@ -25,7 +26,7 @@ $(NAME): $(OBJS)
 	c++ $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 clean:
-	rm -rf $(OBJS_DIR)
+	rm -rf $(OBJS_DIR) $(SHRUB_FILES)
 
 fclean: clean
 	$(RM) $(NAME)

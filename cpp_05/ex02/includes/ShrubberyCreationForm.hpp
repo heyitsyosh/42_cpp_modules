@@ -1,17 +1,17 @@
-#ifndef SHURBBERYCREATIONFORM_HPP
-#define SHURBBERYCREATIONFORM_HPP
+#ifndef SHURBBERYCREATIOnFORM_HPP
+#define SHURBBERYCREATIOnFORM_HPP
 
 // Local headers
 #include "AForm.hpp"
 
-class ShrubberyRequestForm : public AForm {
+class ShrubberyCreationForm : public AForm {
 public:
-	ShrubberyRequestForm();
-	ShrubberyRequestForm(const std::string &target);
-	ShrubberyRequestForm(const ShrubberyRequestForm &other);
-	ShrubberyRequestForm &operator=(const ShrubberyRequestForm &other);
-	~ShrubberyRequestForm();
-	void execute(const Bureaucrat &executor) const;
+	ShrubberyCreationForm();
+	ShrubberyCreationForm(const std::string &target);
+	ShrubberyCreationForm(const ShrubberyCreationForm &other);
+	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+	~ShrubberyCreationForm();
+	void executeInDerived() const;
 private:
 	static const int grade_to_sign = 145;
 	static const int grade_to_exec = 137;

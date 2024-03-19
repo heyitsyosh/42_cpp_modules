@@ -21,13 +21,17 @@ public:
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 	void beSigned(const Bureaucrat &b);
-	bool checkRequirement(const Bureaucrat &b) const;
-	virtual void execute(const Bureaucrat &executor) const = 0;
+	virtual void executeInDerived() const = 0;
+	void execute(const Bureaucrat &executor) const;
 	class GradeTooHighException: public std::exception {
 		public:
 			virtual const char *what() const throw();
 	};
 	class GradeTooLowException: public std::exception {
+		public:
+			virtual const char *what() const throw();
+	};
+	class FormNotSignedException: public std::exception {
 		public:
 			virtual const char *what() const throw();
 	};
@@ -40,6 +44,6 @@ private:
 	const int grade_to_execute;
 };
 
-std::ostream &operator<<(std::ostream &ostream, const AForm &aform);
+std::ostream &operator<<(std::ostream &ostream, const AForm &form);
 
 #endif

@@ -11,7 +11,7 @@ public:
 	PresidentialPardonForm(const PresidentialPardonForm &other);
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
 	~PresidentialPardonForm();
-	void execute(const Bureaucrat &executor) const;
+	void executeInDerived() const;
 private:
 	static const int grade_to_sign = 25;
 	static const int grade_to_exec = 5;

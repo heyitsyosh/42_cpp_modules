@@ -11,7 +11,7 @@ public:
 	RobotomyRequestForm(const RobotomyRequestForm &other);
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 	~RobotomyRequestForm();
-	void execute(const Bureaucrat &executor) const;
+	void executeInDerived() const;
 private:
 	static const int grade_to_sign = 72;
 	static const int grade_to_exec = 45;
