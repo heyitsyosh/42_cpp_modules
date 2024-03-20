@@ -7,7 +7,7 @@ AForm::AForm()
 	grade_to_sign(lowest_grade),
 	grade_to_execute(lowest_grade) {}
 
-AForm::AForm(std::string name, int grade_to_sign, int grade_to_execute)
+AForm::AForm(const std::string &name, int grade_to_sign, int grade_to_execute)
 :	name(name),
 	is_signed(false),
 	grade_to_sign(grade_to_sign),

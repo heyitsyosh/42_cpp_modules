@@ -11,17 +11,17 @@ void testForm(Bureaucrat &b, AForm &f) {
 	b.executeForm(f);
 }
 
-// Testing PresidentialPardonForm execution
-// Grade to sign: 25, Grade to execute: 5
+// Testing ShrubberyCreationForm execution
+// Grade to sign: 145, Grade to execute: 137
 void test1() {
 	std::cout << GREEN "[Test 1]" RESET << std::endl;
-	Bureaucrat signatory_b("Signatory Bureaucrat", 25);
-	Bureaucrat executor_b("Executor Bureaucrat", 5);
-	PresidentialPardonForm ppf("person");
+	Bureaucrat signatory_b("Signatory Bureaucrat", 145);
+	Bureaucrat executor_b("Executor Bureaucrat", 137);
+	ShrubberyCreationForm scf("person");
 
-	testForm(signatory_b, ppf);
+	testForm(signatory_b, scf);
 	std::endl(std::cout);
-	testForm(executor_b, ppf);
+	testForm(executor_b, scf);
 }
 
 // Testing RobotomyRequestForm execution
@@ -37,17 +37,17 @@ void test2() {
 	testForm(executor_b, rrf);
 }
 
-// Testing ShrubberyCreationForm execution
-// Grade to sign: 145, Grade to execute: 137
+// Testing PresidentialPardonForm execution
+// Grade to sign: 25, Grade to execute: 5
 void test3() {
 	std::cout << GREEN "[Test 3]" RESET << std::endl;
-	Bureaucrat signatory_b("Signatory Bureaucrat", 145);
-	Bureaucrat executor_b("Executor Bureaucrat", 137);
-	ShrubberyCreationForm scf("person");
+	Bureaucrat signatory_b("Signatory Bureaucrat", 25);
+	Bureaucrat executor_b("Executor Bureaucrat", 5);
+	PresidentialPardonForm ppf("person");
 
-	testForm(signatory_b, scf);
+	testForm(signatory_b, ppf);
 	std::endl(std::cout);
-	testForm(executor_b, scf);
+	testForm(executor_b, ppf);
 }
 
 int main(){

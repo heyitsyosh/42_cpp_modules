@@ -3,7 +3,7 @@
 
 Bureaucrat::Bureaucrat(): name("Default"), grade(lowest_grade) {}
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
 : name(name), grade(grade)
 {
 	if (grade < highest_grade)

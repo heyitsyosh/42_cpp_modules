@@ -12,7 +12,7 @@ class Bureaucrat;
 class AForm {
 public:
 	AForm();
-	AForm(std::string name, int grade_to_sign, int grade_to_execute);
+	AForm(const std::string &name, int grade_to_sign, int grade_to_execute);
 	AForm(const AForm &other);
 	AForm &operator=(const AForm &other);
 	virtual ~AForm();
