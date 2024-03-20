@@ -29,6 +29,10 @@ public:
 		public:
 			virtual const char *what() const throw();
 	};
+	class FormSignedException: public std::exception {
+		public:
+			virtual const char *what() const throw();
+	};
 private:
 	static const int highest_grade = 1;
 	static const int lowest_grade = 150;

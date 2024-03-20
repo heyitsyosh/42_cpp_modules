@@ -4,10 +4,10 @@
 #include <ctime> //time
 
 RobotomyRequestForm::RobotomyRequestForm()
-:	AForm("RobotomyRequestFormForm", grade_to_sign, grade_to_exec), target("Default") {}
+:	AForm("RobotomyRequestForm", grade_to_sign, grade_to_exec), target("Default") {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-:	AForm("RobotomyRequestFormForm", grade_to_sign, grade_to_exec), target(target) {}
+:	AForm("RobotomyRequestForm", grade_to_sign, grade_to_exec), target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): AForm(other) {}
 

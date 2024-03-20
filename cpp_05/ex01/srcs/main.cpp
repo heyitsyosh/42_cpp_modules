@@ -36,7 +36,6 @@ void test3() {
 	insufficient_b.signForm(mid_setting_form);
 	sufficient_b.signForm(mid_setting_form);
 	superior_b.signForm(mid_setting_form);
-	insufficient_b.signForm(mid_setting_form);
 }
 
 int main(){
