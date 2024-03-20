@@ -26,7 +26,7 @@ void PhoneBook::run() {
 	}
 }
 
-bool	PhoneBook::getlineWrapper(std::string& command) {
+bool	PhoneBook::getlineWrapper(std::string &command) {
 	std::cout << "Enter a command:  ";
 	if (!std::getline(std::cin, command))
 		std::exit(EXIT_FAILURE);
@@ -40,7 +40,7 @@ void	PhoneBook::add() {
 		entry_count++;
 }
 
-bool	PhoneBook::strIsNumber(const std::string& str) {
+bool	PhoneBook::strIsNumber(const std::string &str) {
 	if (str.empty())
 		return false;
 	std::size_t i = 0;
@@ -50,7 +50,7 @@ bool	PhoneBook::strIsNumber(const std::string& str) {
 	return true;
 }
 
-int PhoneBook::strToInt(const std::string& str) {
+int PhoneBook::strToInt(const std::string &str) {
 	int ret;
 	std::istringstream iss(str);
 	iss >> ret;

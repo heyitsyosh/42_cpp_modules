@@ -9,7 +9,7 @@ Contact::Contact() {}
 
 Contact::~Contact() {}
 
-std::string Contact::getField(const std::string& field_type) {
+std::string Contact::getField(const std::string &field_type) {
 	std::string input;
 	bool valid_input_entered = false;
 	while (!valid_input_entered)
@@ -43,7 +43,7 @@ void Contact::printSearchResult() {
 		<< "Darkest secret: " << darkest_secret << std::endl;
 }
 
-void printField(const std::string& str) {
+void printField(const std::string &str) {
 	if (str.length() > WIDTH)
 		std::cout << "|" << std::setw(WIDTH) << std::right << str.substr(0, 9) << ".";
 	else

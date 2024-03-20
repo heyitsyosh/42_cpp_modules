@@ -10,7 +10,7 @@ class ICharacter;
 class AMateria {
 public:
 	AMateria();
-	AMateria(std::string const &type);
+	AMateria(const std::string &type);
 	AMateria(const AMateria &other);
 	AMateria &operator=(const AMateria &other);
 	virtual ~AMateria();

@@ -9,7 +9,7 @@ ScavTrap::ScavTrap()
 	std::cout << "ScavTrap parameterized constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) 
+ScavTrap::ScavTrap(const std::string &name) 
 : ClapTrap(name), _guarding_gate(false) {
 	_hp = 100;
 	_energy_points = 50;
