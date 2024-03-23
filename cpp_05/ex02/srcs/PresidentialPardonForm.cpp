@@ -1,5 +1,5 @@
-#include "PresidentialPardonForm.hpp"
-#include "Bureaucrat.hpp"
+#include <PresidentialPardonForm.hpp>
+#include <Bureaucrat.hpp>
 
 PresidentialPardonForm::PresidentialPardonForm()
 :	AForm("PresidentialPardonForm", grade_to_sign, grade_to_exec), target("Default") {}

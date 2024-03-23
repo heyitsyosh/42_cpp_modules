@@ -1,8 +1,8 @@
-#include "Cat.hpp"
-#include "Brain.hpp"
 #include <iostream> //cout, endl
 #include <new> //bad_alloc
 #include <cstdlib> //exit
+#include <Cat.hpp>
+#include <Brain.hpp>
 
 Cat::Cat() 
 : AAnimal() {

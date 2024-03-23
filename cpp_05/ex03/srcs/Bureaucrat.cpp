@@ -1,5 +1,5 @@
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include <Bureaucrat.hpp>
+#include <AForm.hpp>
 
 Bureaucrat::Bureaucrat(): name("Default"), grade(lowest_grade) {}
 

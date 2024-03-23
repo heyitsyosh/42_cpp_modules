@@ -1,5 +1,5 @@
-#include "AAnimal.hpp"
 #include <iostream> //cout, endl
+#include <AAnimal.hpp>
 
 AAnimal::AAnimal() 
 : type("") {

@@ -1,5 +1,5 @@
-#include "Harl.hpp"
 #include <iostream> //cout, endl
+#include <Harl.hpp>
 
 int main(int argc, char **argv) {
 	if (argc != 2)

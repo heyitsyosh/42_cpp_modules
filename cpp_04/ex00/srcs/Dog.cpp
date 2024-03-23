@@ -1,5 +1,5 @@
-#include "Dog.hpp"
 #include <iostream> //cout, endl
+#include <Dog.hpp>
 
 Dog::Dog()
 : Animal() {

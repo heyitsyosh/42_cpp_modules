@@ -1,8 +1,8 @@
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 #include <iostream> //cout, endl
 #include <climits>  // UINT_MAX
+#include <ClapTrap.hpp>
+#include <ScavTrap.hpp>
+#include <FragTrap.hpp>
 
 # define GREEN "\033[32m"
 # define RESET "\033[0m"

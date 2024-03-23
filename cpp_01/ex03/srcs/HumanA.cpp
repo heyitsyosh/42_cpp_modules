@@ -1,6 +1,6 @@
-#include "HumanA.hpp"
-#include "Weapon.hpp"
 #include <iostream> //cout, endl
+#include <HumanA.hpp>
+#include <Weapon.hpp>
 
 HumanA::HumanA(const std::string &name, Weapon &weapon)
 : _name(name), _weapon(weapon) {}

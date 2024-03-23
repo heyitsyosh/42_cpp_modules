@@ -1,7 +1,7 @@
-#include "Account.hpp"
 #include <iostream> //cout, endl
 #include <ctime> //time_t, struct tm, time, localtime
 #include <iomanip> //setfill, setw
+#include <Account.hpp>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;

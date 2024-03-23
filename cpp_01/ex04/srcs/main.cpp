@@ -1,7 +1,7 @@
-#include "Main.hpp"
 #include <iostream> //cout, endl
 #include <fstream> //ifstream, ofstream, open, close, rdbuf
 #include <sstream> //stringstream, rdbuf
+#include <Main.hpp>
 
 int main(int argc, char **argv) {
 	if (argc != 4)

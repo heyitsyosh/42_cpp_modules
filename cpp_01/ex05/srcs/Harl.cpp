@@ -1,5 +1,5 @@
-#include "Harl.hpp"
 #include <iostream> //cout
+#include <Harl.hpp>
 
 # define LEVELS 4
 

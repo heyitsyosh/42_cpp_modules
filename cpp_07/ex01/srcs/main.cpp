@@ -1,5 +1,5 @@
-#include "iter.hpp"
 #include <iostream> //cout
+#include <iter.hpp>
 
 # define GREEN "\033[32m"
 # define RESET "\033[0m"

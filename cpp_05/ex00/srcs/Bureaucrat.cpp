@@ -1,4 +1,4 @@
-#include "Bureaucrat.hpp"
+#include <Bureaucrat.hpp>
 
 Bureaucrat::Bureaucrat(): name("Default"), grade(lowest_grade) {}
 

@@ -1,5 +1,5 @@
-#include "ClapTrap.hpp"
 #include <climits>  // UINT_MAX
+#include <ClapTrap.hpp>
 
 int main() {
 	ClapTrap claptrap("CL4P-TP");

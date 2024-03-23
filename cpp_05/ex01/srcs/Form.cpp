@@ -1,5 +1,5 @@
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include <Form.hpp>
+#include <Bureaucrat.hpp>
 
 Form::Form()
 :	name("Default"),

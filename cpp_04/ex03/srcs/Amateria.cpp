@@ -1,6 +1,6 @@
-#include "AMateria.hpp"
-#include "Character.hpp"
 #include <iostream> //cout, endl
+#include <AMateria.hpp>
+#include <Character.hpp>
 
 AMateria::AMateria()
 : type("") {

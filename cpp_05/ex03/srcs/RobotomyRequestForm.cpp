@@ -1,7 +1,7 @@
-#include "RobotomyRequestForm.hpp"
-#include "Bureaucrat.hpp"
 #include <cstdlib> //rand, srand, NULL
 #include <ctime> //time
+#include <RobotomyRequestForm.hpp>
+#include <Bureaucrat.hpp>
 
 RobotomyRequestForm::RobotomyRequestForm()
 :	AForm("RobotomyRequestForm", grade_to_sign, grade_to_exec), target("Default") {}

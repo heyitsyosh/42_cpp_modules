@@ -1,5 +1,5 @@
-#include "WrongAnimal.hpp"
 #include <iostream> //cout, endl
+#include <WrongAnimal.hpp>
 
 WrongAnimal::WrongAnimal() 
 : type("WrongAnimal") {

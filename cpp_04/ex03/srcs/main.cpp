@@ -1,10 +1,10 @@
-#include "AMateria.hpp"
-#include "Character.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "MateriaSource.hpp"
 #include <iostream> //cout, cerr, endl
 // #include <cstdlib> //system
+#include <AMateria.hpp>
+#include <Character.hpp>
+#include <Cure.hpp>
+#include <Ice.hpp>
+#include <MateriaSource.hpp>
 
 # define GREEN "\033[32m"
 # define RESET "\033[0m"

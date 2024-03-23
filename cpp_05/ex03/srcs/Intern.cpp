@@ -1,8 +1,8 @@
-#include "Intern.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
 #include <iostream>
+#include <Intern.hpp>
+#include <PresidentialPardonForm.hpp>
+#include <RobotomyRequestForm.hpp>
+#include <ShrubberyCreationForm.hpp>
 
 Intern::Intern() {}
 

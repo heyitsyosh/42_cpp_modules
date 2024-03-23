@@ -1,6 +1,6 @@
-#include "ShrubberyCreationForm.hpp"
-#include "Bureaucrat.hpp"
 #include <fstream> //ofstream
+#include <ShrubberyCreationForm.hpp>
+#include <Bureaucrat.hpp>
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 :	AForm("ShrubberyCreationForm", grade_to_sign, grade_to_exec), target("Default") {}

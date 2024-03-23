@@ -3,7 +3,6 @@
 
 #include <stddef.h> //size_t
 
-//could alter contents
 template <typename T>
 void iter(T *array, size_t length, void (*f)(T&)) {
 	if (!array || !f)
@@ -13,7 +12,6 @@ void iter(T *array, size_t length, void (*f)(T&)) {
 	}
 }
 
-//doesn't alter contents
 template <typename T>
 void iter(const T *array, size_t length, void (*f)(const T&)) {
 	if (!array || !f)

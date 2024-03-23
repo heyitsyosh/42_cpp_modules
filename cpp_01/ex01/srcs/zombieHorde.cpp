@@ -1,7 +1,7 @@
-#include "Zombie.hpp"
 #include <iostream> //cerr, endl
 #include <new> //bad_alloc
 #include <cstdlib> //exit
+#include <Zombie.hpp>
 
 Zombie *zombieHorde(int n, std::string name) {
 	if (n <= 0)

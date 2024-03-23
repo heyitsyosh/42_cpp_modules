@@ -1,5 +1,5 @@
-#include "ScavTrap.hpp"
 #include <iostream> //cout, endl
+#include <ScavTrap.hpp>
 
 ScavTrap::ScavTrap() 
 : ClapTrap(), _guarding_gate(false) {

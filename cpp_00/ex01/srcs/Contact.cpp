@@ -1,7 +1,7 @@
-#include "Contact.hpp"
 #include <iostream> //cout, cin, endl
 #include <cstdlib> //exit, EXIT_FAILURE
 #include <iomanip> //setw
+#include <Contact.hpp>
 
 # define WIDTH 10
 

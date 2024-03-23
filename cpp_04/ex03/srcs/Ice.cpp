@@ -1,8 +1,8 @@
-#include "Ice.hpp"
-#include "Character.hpp"
 #include <iostream> //cout, endl
 #include <new> //new, bad_alloc
 #include <cstdlib> //exit
+#include <Ice.hpp>
+#include <Character.hpp>
 
 Ice::Ice()
 : AMateria("ice") {

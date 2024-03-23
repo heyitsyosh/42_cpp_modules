@@ -1,5 +1,5 @@
-#include "Zombie.hpp"
-#include <iostream> //cout, endl
+#include <iostream> //cout, end
+#include <Zombie.hpp>
 
 Zombie::Zombie(const std::string &name) {
 	this->name = name;

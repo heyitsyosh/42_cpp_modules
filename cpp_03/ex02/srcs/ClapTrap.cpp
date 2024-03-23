@@ -1,6 +1,6 @@
-#include "ClapTrap.hpp"
 #include <iostream> //cout, endl
 #include <climits>  // UINT_MAX
+#include <ClapTrap.hpp>
 
 ClapTrap::ClapTrap()
 : _name(""), _hp(10), _energy_points(10), _attack_damage(0) {

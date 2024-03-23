@@ -1,8 +1,8 @@
-#include "Cure.hpp"
-#include "Character.hpp"
 #include <iostream> //cout, endl
 #include <new> //new, bad_alloc
 #include <cstdlib> //exit
+#include <Cure.hpp>
+#include <Character.hpp>
 
 Cure::Cure()
 : AMateria("cure") {

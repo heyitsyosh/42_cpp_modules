@@ -1,8 +1,8 @@
-#include "Dog.hpp"
-#include "Brain.hpp"
 #include <iostream> //cout, endl
 #include <new> //bad_alloc
 #include <cstdlib> //exit
+#include <Dog.hpp>
+#include <Brain.hpp>
 
 Dog::Dog()
 : Animal() {

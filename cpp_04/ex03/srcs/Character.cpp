@@ -1,6 +1,6 @@
-#include "Character.hpp"
-#include "AMateria.hpp"
 #include <iostream> //cout, endl
+#include <Character.hpp>
+#include <AMateria.hpp>
 
 Character::Character()
 : ICharacter(), name(""){

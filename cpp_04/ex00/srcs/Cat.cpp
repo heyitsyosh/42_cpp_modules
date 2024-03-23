@@ -1,5 +1,5 @@
-#include "Cat.hpp"
 #include <iostream> //cout, endl
+#include <Cat.hpp>
 
 Cat::Cat() 
 : Animal() {

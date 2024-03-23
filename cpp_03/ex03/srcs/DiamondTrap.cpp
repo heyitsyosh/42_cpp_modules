@@ -1,5 +1,5 @@
-#include "DiamondTrap.hpp"
 #include <iostream> //cout, endl
+#include <DiamondTrap.hpp>
 
 DiamondTrap::DiamondTrap()
 : ClapTrap(), ScavTrap(), FragTrap(), _name("") {

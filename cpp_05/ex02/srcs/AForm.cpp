@@ -1,5 +1,5 @@
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
+#include <AForm.hpp>
+#include <Bureaucrat.hpp>
 
 AForm::AForm()
 :	name("Default"),

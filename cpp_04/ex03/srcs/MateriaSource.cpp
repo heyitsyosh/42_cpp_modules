@@ -1,6 +1,6 @@
-#include "MateriaSource.hpp"
-#include "AMateria.hpp"
 #include <iostream> //cout, endl
+#include <AMateria.hpp>
+#include <MateriaSource.hpp>
 
 MateriaSource::MateriaSource()
 : IMateriaSource() {

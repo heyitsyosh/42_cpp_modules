@@ -1,7 +1,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "Contact.hpp"
+#include <Contact.hpp>
 
 # define MAX_CONTACTS 8
 

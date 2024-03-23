@@ -1,5 +1,5 @@
-#include "Fixed.hpp"
 #include <cmath> //roundf
+#include <Fixed.hpp>
 
 Fixed::Fixed() 
 : raw_value(0) {

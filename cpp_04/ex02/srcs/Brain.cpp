@@ -1,5 +1,5 @@
-#include "Brain.hpp"
 #include <iostream> //cout, endl
+#include <Brain.hpp>
 
 const std::string Brain::EMPTY_IDEA = "";
 

@@ -1,8 +1,8 @@
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "Intern.hpp"
+#include <Bureaucrat.hpp>
+#include <ShrubberyCreationForm.hpp>
+#include <RobotomyRequestForm.hpp>
+#include <PresidentialPardonForm.hpp>
+#include <Intern.hpp>
 
 # define GREEN "\033[32m"
 # define RESET "\033[0m"

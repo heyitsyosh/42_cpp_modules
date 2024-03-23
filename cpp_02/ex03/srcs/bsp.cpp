@@ -1,4 +1,4 @@
-#include "Point.hpp"
+#include <Point.hpp>
 
 static float crossProduct(Point a, Point b, Point c) {
 	float ab_x = b.getX().toFloat() - a.getX().toFloat();

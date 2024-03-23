@@ -1,9 +1,9 @@
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
 #include <iostream> //cout, cerr, endl
 #include <sstream> //stringstream
 // #include <cstdlib> //system
+#include <Animal.hpp>
+#include <Cat.hpp>
+#include <Dog.hpp>
 
 # define GREEN "\033[32m"
 # define RESET "\033[0m"

@@ -1,6 +1,6 @@
-#include "HumanB.hpp"
-#include "Weapon.hpp"
 #include <iostream> //cout, endl
+#include <HumanB.hpp>
+#include <Weapon.hpp>
 
 HumanB::HumanB() {}
 
