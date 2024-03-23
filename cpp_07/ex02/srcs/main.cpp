@@ -1,5 +1,74 @@
-#include <iostream>
+#include <iostream> //cout
 #include <Array.hpp>
+
+# define GREEN "\033[32m"
+# define RESET "\033[0m"
+
+template class Array<int>;
+template class Array<std::string>;
+
+void set_int_arr(size_t size, int n, Array<int> &a) {
+	for (size_t i = 0; i < size; i++)
+		a[i] = n;
+}
+
+// Testing default constructor
+void test1() {
+	std::cout << GREEN "[Test 1]" RESET << std::endl;
+	Array<int> arr_int;
+
+	arr_int.printArr();
+}
+
+// Testing = operator
+void test2() {
+	std::cout << GREEN "[Test 2]" RESET << std::endl;
+	Array<int> arr_int(5);
+	Array<int> arr_int2(5);
+
+	set_int_arr(5, 1, arr_int);
+	set_int_arr(5, 2, arr_int2);
+	
+	arr_int.printArr();
+	arr_int = arr_int2;
+	arr_int.printArr();
+}
+
+// Testing copy constructor
+void test3() {
+	std::cout << GREEN "[Test 3]" RESET << std::endl;
+	Array<int> arr_int(5);
+	Array<int> arr_int2(arr_int);
+	
+	std::cout << arr_int.getArr() << "\n" << arr_int2.getArr() << std::endl;
+}
+
+// Testing [] operator out-of-range exceptions
+void test4() {
+	std::cout << GREEN "[Test 4]" RESET << std::endl;
+	Array<int> arr_int(5);
+
+	set_int_arr(5, 1, arr_int);
+	try {
+		std::cout << arr_int[4] << std::endl;
+		std::cout << arr_int[5] << std::endl;
+	}
+	catch (const std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+}
+
+int main() {
+	test1();
+	test2();
+	test3();
+	test4();
+
+	return 0;
+}
+
+/*
+#include <cstdlib>
 
 #define MAX_VAL 750
 int main(int, char**)
@@ -51,3 +120,4 @@ int main(int, char**)
     delete [] mirror;//
     return 0;
 }
+*/
