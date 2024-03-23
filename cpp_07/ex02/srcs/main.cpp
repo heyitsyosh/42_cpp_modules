@@ -6,8 +6,8 @@
 
 template class Array<int>;
 
-void set_int_arr(size_t size, int n, Array<int> &a) {
-	for (size_t i = 0; i < size; i++)
+void set_int_arr(int n, Array<int> &a) {
+	for (size_t i = 0; i < a.size(); i++)
 		a[i] = n;
 }
 
@@ -17,6 +17,7 @@ void test1() {
 	Array<int> arr_int;
 
 	arr_int.printArr();
+	std::cout << "Arr_size: " << arr_int.size() << std::endl;
 }
 
 // Testing = operator
@@ -25,8 +26,8 @@ void test2() {
 	Array<int> arr_int(5);
 	Array<int> arr_int2(5);
 
-	set_int_arr(5, 1, arr_int);
-	set_int_arr(5, 2, arr_int2);
+	set_int_arr(1, arr_int);
+	set_int_arr(2, arr_int2);
 	
 	arr_int.printArr();
 	arr_int = arr_int2;
@@ -47,7 +48,7 @@ void test4() {
 	std::cout << GREEN "[Test 4]" RESET << std::endl;
 	Array<int> arr_int(5);
 
-	set_int_arr(5, 1, arr_int);
+	set_int_arr(1, arr_int);
 	try {
 		std::cout << arr_int[4] << std::endl;
 		std::cout << arr_int[5] << std::endl;

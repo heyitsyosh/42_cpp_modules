@@ -42,7 +42,8 @@ public:
 			else
 				std::cout << arr[i];
 		}
-		std::endl(std::cout);
+		if (arr_size != 0)
+			std::endl(std::cout);
 	}
 	T *getArr() const { return arr; }
 private:
