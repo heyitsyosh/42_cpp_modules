@@ -5,7 +5,6 @@
 # define RESET "\033[0m"
 
 template class Array<int>;
-template class Array<std::string>;
 
 void set_int_arr(size_t size, int n, Array<int> &a) {
 	for (size_t i = 0; i < size; i++)
