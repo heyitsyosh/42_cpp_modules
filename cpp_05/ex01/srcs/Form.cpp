@@ -12,13 +12,9 @@ Form::Form(std::string name, int grade_to_sign, int grade_to_execute)
 	is_signed(false),
 	grade_to_sign(grade_to_sign),
 	grade_to_execute(grade_to_execute) {
-	if (grade_to_sign < highest_grade)
+	if (grade_to_sign < highest_grade || grade_to_execute < highest_grade)
 		throw Form::GradeTooHighException();
-	if (grade_to_sign > lowest_grade)
-		throw Form::GradeTooLowException();
-	if (grade_to_execute < highest_grade)
-		throw Form::GradeTooHighException();
-	if (grade_to_execute > lowest_grade)
+	if (grade_to_sign > lowest_grade || grade_to_execute > lowest_grade)
 		throw Form::GradeTooLowException();
 }
 
