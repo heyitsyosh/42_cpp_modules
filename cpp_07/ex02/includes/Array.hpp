@@ -7,9 +7,8 @@ template <typename T>
 class Array  {
 public:
 	Array(unsigned int n = 0): arr_size(n) { arr = new T[n]; }
-	Array(const Array &other) {
+	Array(const Array &other): arr_size(other.arr_size) {
 		arr = new T[other.arr_size];
-		arr_size = other.arr_size;
 		for (unsigned int i; i < arr_size; i++)
 			arr[i] = other.arr[i];
 	}
@@ -35,6 +34,7 @@ public:
 		return (arr[i]);
 	}
 	unsigned int size() const { return arr_size; }
+	T *getArr() const { return arr; }
 	void printArr() const { 
 		for (unsigned int i = 0; i < arr_size; i++) {
 			if (i != arr_size)
@@ -45,7 +45,6 @@ public:
 		if (arr_size != 0)
 			std::endl(std::cout);
 	}
-	T *getArr() const { return arr; }
 private:
 	T *arr;
 	unsigned int arr_size;
