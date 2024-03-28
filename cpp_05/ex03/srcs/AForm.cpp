@@ -13,9 +13,9 @@ AForm::AForm(const std::string &name, int grade_to_sign, int grade_to_execute)
 	grade_to_sign(grade_to_sign),
 	grade_to_execute(grade_to_execute) {
 	if (grade_to_sign < highest_grade || grade_to_execute < highest_grade)
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	if (grade_to_sign > lowest_grade || grade_to_execute > lowest_grade)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 }
 
 AForm::AForm(const AForm &other)
