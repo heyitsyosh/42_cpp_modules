@@ -18,7 +18,7 @@ void PhoneBook::run() {
 			add();
 		else if (command == "SEARCH")
 			search();
-        else if (command == "EXIT")
+		else if (command == "EXIT")
 			break;
 		else
 			printUsage();

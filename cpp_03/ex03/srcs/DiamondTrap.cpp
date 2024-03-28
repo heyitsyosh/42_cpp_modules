@@ -25,9 +25,9 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
 	std::cout << "DiamondTrap copy assignment operator called" << std::endl;
 	if (this != &other) {
-        ScavTrap::operator=(other);
-        FragTrap::operator=(other);
-        _name = other._name; 
+		ScavTrap::operator=(other);
+		FragTrap::operator=(other);
+		_name = other._name; 
 	}
 	return *this;
 }

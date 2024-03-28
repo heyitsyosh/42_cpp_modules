@@ -23,7 +23,7 @@ void ShrubberyCreationForm::executeInDerived() const {
 	std::ofstream file;
 	file.open(filename.c_str());
 	if (!file.is_open())
-        throw std::runtime_error("Failed to open file: " + filename);
+		throw std::runtime_error("Failed to open file: " + filename);
 	file <<
 "                                                         .\n"
 "                                              .         :  \n"

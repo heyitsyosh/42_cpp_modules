@@ -8,7 +8,7 @@ AMateria::AMateria()
 }
 
 AMateria::AMateria(const std::string &type) {
-    // std::cout << "AMateria parameterized constructor called" << std::endl;
+	// std::cout << "AMateria parameterized constructor called" << std::endl;
 	this->type = type;
 }
 
@@ -29,11 +29,11 @@ AMateria::~AMateria() {
 }
 
 const std::string &AMateria::getType() const {
-    return type;
+	return type;
 }
 
 void AMateria::use(ICharacter& target) {
-    if (type == "ice")
+	if (type == "ice")
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	else if (type == "cure")
 		std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;

@@ -34,7 +34,7 @@ AMateria *Ice::clone() const {
 		std::cerr << e.what() << std::endl;
 		std::exit(1);
 	}
-    return clone;
+	return clone;
 }
 
 void Ice::use(ICharacter &target) const {
