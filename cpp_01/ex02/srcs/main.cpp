@@ -1,4 +1,5 @@
-#include <iostream>
+#include <iostream> //cout, endl
+#include <string>
 
 int main() {
 	std::string stringVar = "HI THIS IS BRAIN";

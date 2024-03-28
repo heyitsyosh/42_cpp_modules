@@ -1,4 +1,4 @@
-#include <iostream> //cout
+#include <iostream> //cout, endl
 #include <iter.hpp>
 
 # define GREEN "\033[32m"

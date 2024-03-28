@@ -11,19 +11,19 @@
 
 void test1() {
 	std::cout << GREEN  "[Test 1 (from subject.pdf)]" RESET << std::endl;
-	IMateriaSource* src = new MateriaSource();
+	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
-	ICharacter* me = new Character("me");
+	ICharacter *me = new Character("me");
 
-	AMateria* tmp;
+	AMateria *tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
-	ICharacter* bob = new Character("bob");
+	ICharacter *bob = new Character("bob");
 
 	me->use(0, *bob);
 	me->use(1, *bob);
@@ -35,10 +35,10 @@ void test1() {
 
 void test2() {
 	std::cout << GREEN  "[Test 2]" RESET << std::endl;
-	IMateriaSource* src = new MateriaSource();
-	ICharacter* me = new Character("me");
+	IMateriaSource *src = new MateriaSource();
+	ICharacter *me = new Character("me");
 	Cure *cures[MAX_MATERIAS + 1];
-	AMateria* tmp[MAX_MATERIAS + 1];
+	AMateria *tmp[MAX_MATERIAS + 1];
 
 	for (int i = 0; i < MAX_MATERIAS + 1; i++)
 		cures[i] = new Cure();

@@ -1,4 +1,3 @@
-#include <iostream> //cout
 #include <Array.hpp>
 
 # define GREEN "\033[32m"
@@ -68,13 +67,14 @@ int main() {
 }
 
 /*
-#include <cstdlib>
+#include <cstdlib> //rand, srand, NULL
+#include <exception>
 
 #define MAX_VAL 750
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
+    int *mirror = new int[MAX_VAL];
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {

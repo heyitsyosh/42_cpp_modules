@@ -6,10 +6,10 @@
 #include <WrongCat.hpp>
 
 int main() {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* wrong = new WrongCat();
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+	const WrongAnimal *wrong = new WrongCat();
 	std::endl(std::cout);
 
 	std::cout << "Type is " << j->getType() << " " << std::endl;

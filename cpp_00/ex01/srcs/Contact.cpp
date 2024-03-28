@@ -1,6 +1,6 @@
 #include <iostream> //cout, cin, endl
 #include <cstdlib> //exit, EXIT_FAILURE
-#include <iomanip> //setw
+#include <iomanip> //setw, right
 #include <Contact.hpp>
 
 # define WIDTH 10

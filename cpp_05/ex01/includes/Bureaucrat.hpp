@@ -3,7 +3,7 @@
 
 // STL headers
 #include <string>
-#include <iostream> //ostream
+#include <iostream> //ostream, (cout, endl)
 #include <exception>
 
 // Forward declarations

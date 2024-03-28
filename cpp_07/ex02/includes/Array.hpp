@@ -2,6 +2,7 @@
 #define ARRAY_HPP
 
 #include <exception>
+#include <iostream> //cout, endl
 
 template <typename T>
 class Array  {

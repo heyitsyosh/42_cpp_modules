@@ -1,4 +1,4 @@
-#include <iostream> //cout
+#include <iostream> //cout, endl
 #include <whatever.hpp>
 
 int main() {
