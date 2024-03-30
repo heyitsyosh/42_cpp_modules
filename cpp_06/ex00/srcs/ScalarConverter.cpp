@@ -213,7 +213,7 @@ void ScalarConverter::printFloat(const std::string &str, e_type type) {
 		std::cout << d;
 	}
 	else {
-		long value = 0;
+		int value = 0;
 		if (type == CHAR)
 			value = static_cast<int>(str[0]);
 		else if (type == INT)
@@ -238,7 +238,7 @@ void ScalarConverter::printDouble(const std::string &str, e_type type) {
 		std::cout << d;
 	}
 	else {
-		long value = 0;
+		int value = 0;
 		if (type == CHAR)
 			value = static_cast<int>(str[0]);
 		else if (type == INT)
