@@ -1,7 +1,9 @@
 #include <iostream> //cout, endl
 #include <cstdlib> //rand, srand, NULL
 #include <ctime> //time
-#include <Classes.hpp>
+#include <A.hpp>
+#include <B.hpp>
+#include <C.hpp>
 
 Base *generate(void) {
 	int n = rand() % 3;
@@ -55,6 +57,7 @@ int main() {
 	Base *ptr = generate();
 	Base &ref = *ptr;
 	identify(ptr);
+	std::cout << ", ";
 	identify(ref);
 	delete ptr;
 	return 0;
