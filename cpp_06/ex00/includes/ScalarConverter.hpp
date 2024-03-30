@@ -27,12 +27,12 @@ private:
 	static bool isDouble(const std::string &str);
 	static bool isPseudoLiteral(const std::string &str);
 	static e_type getType(const std::string &str);
-	// static void testTypeValidationFuncs(const std::string &str);
 	static void printChar(const std::string &str, e_type type);
 	static void printInt(const std::string &str, e_type type);
 	static void printFloat(const std::string &str, e_type type);
 	static void printDouble(const std::string &str, e_type type);
 	static void printAllConversions(const std::string &str, e_type type);
+	static void testTypeValidationFuncs(const std::string &str);
 };
 
 #endif

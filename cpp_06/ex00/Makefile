@@ -32,6 +32,9 @@ fclean: clean
 
 re: fclean all
 
+debug: CPPFLAGS += -D DEBUG
+debug: re
+
 -include $(DEPS)
 
 .PHONY: all clean fclean re

@@ -103,7 +103,9 @@ bool ScalarConverter::isDouble(const std::string &str) {
 }
 
 e_type ScalarConverter::getType(const std::string &str) {
-	// testTypeValidationFuncs(str);
+	#if DEBUG
+		testTypeValidationFuncs(str);
+	#endif
 	if (str.empty())
 		return OTHER;
 	else if (isChar(str))
@@ -119,33 +121,38 @@ e_type ScalarConverter::getType(const std::string &str) {
 	return OTHER;
 }
 
-// typedef bool (*t_validationFunc)(const std::string &);
+typedef bool (*t_validationFunc)(const std::string &);
 
-// bool testType(const std::string& str, t_validationFunc f, const std::string &type) {
-// 	if (f(str)) {
-// 		std::cout << str << " is " << type << std::endl;
-// 		return true;
-// 	}
-// 	// std::cout << str << " is NOT a " << type << std::endl;
-// 	return false;
-// }
+static bool testType(const std::string& str, t_validationFunc f, const std::string &type) {
+	if (f(str)) {
+		std::cout << str << " is " << type << std::endl;
+		return true;
+	}
+	// std::cout << str << " is NOT a " << type << std::endl;
+	return false;
+}
 
-// void ScalarConverter::testTypeValidationFuncs(const std::string &str) {
-// 	if (str.empty())
-// 		std::cout << "input is empty str" << std::endl;
-// 	else if (testType(str, &ScalarConverter::isChar, "char"))
-// 		return;
-// 	else if (testType(str, &ScalarConverter::isInt, "int"))
-// 		return;
-// 	else if (testType(str, &ScalarConverter::isPseudoLiteral, "pseudoliteral"))
-// 		return;
-// 	else if (testType(str, &ScalarConverter::isFloat, "float"))
-// 		return;
-// 	else if (testType(str, &ScalarConverter::isDouble, "double"))
-// 		return;
-// 	else
-// 		std::cout << str << " is NOT any convertible type" << std::endl;
-// }
+void ScalarConverter::testTypeValidationFuncs(const std::string &str) {
+	#if DEBUG
+	if (str.empty())
+		std::cout << "input is empty str" << std::endl;
+	else if (testType(str, &ScalarConverter::isChar, "char"))
+		return;
+	else if (testType(str, &ScalarConverter::isInt, "int"))
+		return;
+	else if (testType(str, &ScalarConverter::isPseudoLiteral, "pseudoliteral"))
+		return;
+	else if (testType(str, &ScalarConverter::isFloat, "float"))
+		return;
+	else if (testType(str, &ScalarConverter::isDouble, "double"))
+		return;
+	else
+		std::cout << str << " is NOT any convertible type" << std::endl;
+	#else
+	(void)str;
+	(void)testType;
+	#endif
+}
 
 void ScalarConverter::printChar(const std::string &str, e_type type) {
 	if (type == OTHER || type == PSEUDOLITERAL) {
