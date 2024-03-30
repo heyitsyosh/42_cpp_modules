@@ -23,17 +23,20 @@ int main() {
 	testConvert("  42");
 	testConvert("  42.0");
 	testConvert("  42f");
-	testConvert("-2147483648");
+	testConvert("-9223372a");
+	testConvert("-2147483648"); //INT_MIN
 	testConvert("-2147483648.f");
 	testConvert("-2147483648.0f");
-	testConvert("-2147483649");
-	testConvert("2147483647");
+	testConvert("-2147483649"); 
+	testConvert("2147483647"); //INT_MAX
 	testConvert("2147483648");
-	testConvert("-9223372a");
 	testConvert("3.4028235e+38f");
 	testConvert("1e+40");
+	testConvert("-3.4028235e+38f");
+	testConvert("-1e+40");
 	testConvert("1.7976931348623157e+308");
 	testConvert("1e+309");
+	testConvert("-1e+309");
 	testConvert("inf");
 	testConvert("infinity");
 	testConvert("+inf");
