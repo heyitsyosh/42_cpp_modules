@@ -3,8 +3,8 @@
 
 // STL headers
 #include <string>
-#include <iostream> //ostream
 #include <exception>
+#include <iostream> //ostream
 
 class Bureaucrat {
 public:

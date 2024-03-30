@@ -3,8 +3,8 @@
 
 // STL headers
 #include <string>
-#include <iostream> //ostream, (cout, endl)
 #include <exception>
+#include <iostream> //ostream, (cout, endl)
 
 // Forward declarations
 class AForm;

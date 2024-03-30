@@ -45,7 +45,7 @@ bool	PhoneBook::strIsNumber(const std::string &str) {
 		return false;
 	std::size_t i = 0;
 	while (str[i])
-		if (!isdigit(str[i++]))
+		if (!std::isdigit(str[i++]))
 			return false;
 	return true;
 }
