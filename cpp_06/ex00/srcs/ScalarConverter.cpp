@@ -2,7 +2,7 @@
 #include <iostream> //cout, endl
 #include <stdexcept> //invalid_argument, out_of_range
 #include <sstream> //istringstream
-#include <climits> //INT_MAX, INT_MIN, CHAR_MAX, CHAR_MIN, size_t?
+#include <climits> //INT_MAX, INT_MIN, CHAR_MAX, CHAR_MIN
 #include <cfloat> //FLT_MAX, FLT_MIN, DBL_MAX, DBL_MIN
 #include <cstdlib> //atoi, atof, strtod, abs
 #include <cerrno> //errno, ERANGE
@@ -43,9 +43,9 @@ int ScalarConverter::toInt(const std::string &str) {
 		if (!std::isdigit(str[i]))
 			throw std::invalid_argument("");
 		int digit = str[i] - '0';
-		if (sign == 1 && num * 10 > INT_MAX - digit)
+		if (sign == 1 && num > INT_MAX / 10 - digit)
 			throw std::out_of_range("");
-		else if (sign == -1 && num * 10 < INT_MIN + digit)
+		else if (sign == -1 && num < INT_MIN / 10 + digit)
 			throw std::out_of_range("");
 		num = (num * 10) + sign * digit;
 	}
@@ -53,6 +53,8 @@ int ScalarConverter::toInt(const std::string &str) {
 		throw std::invalid_argument("");
 	return num;
 }
+
+//setprecision, 8, 27
 
 bool ScalarConverter::isInt(const std::string &str) {
 	try {
@@ -217,7 +219,9 @@ void ScalarConverter::printFloat(const std::string &str, e_type type) {
 			std::cout << "impossible";
 			return;
 		}
-		std::cout << d;
+		std::cout << static_cast<float>(d);
+		if (d == 0)
+			std::cout << ".0";
 	}
 	else {
 		int value = 0;
@@ -243,6 +247,8 @@ void ScalarConverter::printDouble(const std::string &str, e_type type) {
 			return;
 		}
 		std::cout << d;
+		if (d == 0)
+			std::cout << ".0";
 	}
 	else {
 		int value = 0;

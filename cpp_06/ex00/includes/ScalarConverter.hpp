@@ -14,12 +14,12 @@ enum e_type {
 
 class ScalarConverter {
 public:
+	static void convert(const std::string &str);
+private:
 	ScalarConverter();
 	ScalarConverter(const ScalarConverter &other);
 	ScalarConverter &operator=(const ScalarConverter &other);
 	~ScalarConverter();
-	static void convert(const std::string &str);
-private:
 	static bool isChar(const std::string &str);
 	static int toInt(const std::string &str);
 	static bool isInt(const std::string &str);
