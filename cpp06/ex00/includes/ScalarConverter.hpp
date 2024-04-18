@@ -8,7 +8,6 @@ enum e_type {
 	INT,
 	FLOAT,
 	DOUBLE,
-	PSEUDOLITERAL,
 	OTHER
 };
 
@@ -26,11 +25,18 @@ private:
 	static bool isFloat(const std::string &str);
 	static bool isDouble(const std::string &str);
 	static bool isPseudoLiteral(const std::string &str);
+	static bool isDoublePseudoLiteral(const std::string &str);
+	static bool isFloatPseudoLiteral(const std::string &str);
 	static e_type getType(const std::string &str);
-	static void printChar(const std::string &str, e_type type);
-	static void printInt(const std::string &str, e_type type);
-	static void printFloat(const std::string &str, e_type type);
-	static void printDouble(const std::string &str, e_type type);
+	static void convertFromChar(const std::string &str);
+	static void convertFromInt(const std::string &str);
+	static void convertFromFloat(const std::string &str);
+	static void convertFromDouble(const std::string &str);
+	static void convertFromOther();
+	static void printChar(unsigned char c);
+	static void printInt(int i);
+	static void printFloat(float f);
+	static void printDouble(double d);
 	static void printAllConversions(const std::string &str, e_type type);
 	static void testTypeValidationFuncs(const std::string &str);
 };
