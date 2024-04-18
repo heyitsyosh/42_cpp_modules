@@ -162,14 +162,6 @@ void ScalarConverter::convertFromInt(const std::string &str) {
 	printDouble(static_cast<double>(i));
 }
 
-// static bool isInf(double x) {
-//     return (x == HUGE_VAL || x == -HUGE_VAL);
-// }
-
-// static bool isNaN(double x) {
-//     return x != x;
-// }
-
 void ScalarConverter::convertFromFloat(const std::string &str) {
 	std::istringstream iss(str);
 	float f;
