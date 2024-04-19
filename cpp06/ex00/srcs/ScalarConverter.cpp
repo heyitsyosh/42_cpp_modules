@@ -7,11 +7,6 @@
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter() {}
-ScalarConverter::ScalarConverter(const ScalarConverter &other) { (void)other; }
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other) {
-	(void)other;
-	return *this;
-}
 ScalarConverter::~ScalarConverter() {}
 
 void ScalarConverter::convert(const std::string &str) {
@@ -163,7 +158,9 @@ void ScalarConverter::convertFromInt(const std::string &str) {
 }
 
 void ScalarConverter::convertFromFloat(const std::string &str) {
-	std::istringstream iss(str);
+	std::string str_cpy = str;
+	str_cpy.erase(str.rfind("f"), 1);
+	std::istringstream iss(str_cpy);
 	float f;
 	iss >> f;
 

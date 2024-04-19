@@ -10,10 +10,9 @@ int main() {
 	Data data = {1, 0.01, 'a'};
 	uintptr_t serialized = Serializer::serialize(&data);
 	Data *deserialized = Serializer::deserialize(serialized);
-
-	std::cout << &serialized << "\n"
-		<< deserialized << "\n"
-		<< "Int: " << deserialized->int_val << "\n"
-		<< "Double: " << deserialized->double_val << "\n"
-		<< "Char: " << deserialized->char_val << std::endl;
+	std::cout << "Serialized address: " << &serialized << "\n"
+		<< "Deserialized address: " <<  deserialized << "\n"
+		<< "Int: " << data.int_val << ", " << deserialized->int_val << "\n"
+		<< "Double: " << data.double_val << ", " << deserialized->double_val << "\n"
+		<< "Char: " << data.char_val << ", " << deserialized->char_val << std::endl;
 }
