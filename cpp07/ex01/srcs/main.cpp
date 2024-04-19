@@ -9,7 +9,7 @@ void increment_int(int& i) {
 }
 
 void print_int(const int& i) {
-	std::cout << i << ' ';
+	std::cout << i;
 }
 
 void test1() {
@@ -34,6 +34,7 @@ void test2() {
 
 	std::cout << "Printing const elements: ";
 	iter(const_nums, length, print_int);
+	std::endl(std::cout);
 }
 
 int main() {
