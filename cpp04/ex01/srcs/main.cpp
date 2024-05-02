@@ -16,7 +16,7 @@ void test1() {
 	const Animal *i = new Cat();
 	std::endl(std::cout);
 
-	delete j;//should not create a leak
+	delete j; //should not create a leak
 	delete i;
 }
 
