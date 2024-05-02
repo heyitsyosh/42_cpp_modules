@@ -1,11 +1,11 @@
-#include <iostream>
+#include <iostream> //cout, endl
 #include <string>
 #include <vector>
 #include <list>
 #include "easyfind.hpp"
 
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 void testList() {
 	std::cout << GREEN "[Test (List ver.)]" RESET << std::endl;

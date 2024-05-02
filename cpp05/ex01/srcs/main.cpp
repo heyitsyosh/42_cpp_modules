@@ -1,8 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 // Testing Form insertion overload
 void test1() {

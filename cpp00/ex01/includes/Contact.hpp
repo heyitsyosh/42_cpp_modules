@@ -3,7 +3,7 @@
 
 #include <string>
 
-# define MAX_CONTACTS 8
+#define MAX_CONTACTS 8
 
 class Contact {
 public:

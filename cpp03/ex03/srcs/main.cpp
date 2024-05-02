@@ -5,8 +5,8 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 void ClapTrapTests(const std::string &player) {
 	std::cout << GREEN "[ClapTrap Tests]" RESET << std::endl;

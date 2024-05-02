@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 void test1( void ) {
 	std::cout << GREEN "[Test 1]" RESET << std::endl;

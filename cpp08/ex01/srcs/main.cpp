@@ -3,8 +3,8 @@
 #include <vector>
 #include "Span.hpp"
 
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 void test1() {
 	std::cout << GREEN "[Test 1]" RESET << std::endl;

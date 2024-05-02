@@ -1,8 +1,8 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 #define MAX (2147483648.0f/256)
 #define MIN (1.0f/256)

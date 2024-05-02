@@ -3,7 +3,7 @@
 #include <iomanip> //setw, right
 #include "Contact.hpp"
 
-# define WIDTH 10
+#define WIDTH 10
 
 Contact::Contact() {}
 

@@ -1,7 +1,7 @@
 #include <iostream> //cout, endl
 #include "Harl.hpp"
 
-# define LEVELS 4
+#define LEVELS 4
 
 Harl::Harl() {}
 

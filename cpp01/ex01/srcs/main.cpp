@@ -1,7 +1,7 @@
 // #include <cstdlib> //system
 #include "Zombie.hpp"
 
-# define HORDESIZE 7
+#define HORDESIZE 7
 
 int main() {
 	Zombie *zombies = zombieHorde(HORDESIZE, "zombie");

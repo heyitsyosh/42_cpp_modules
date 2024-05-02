@@ -5,10 +5,10 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-# define GREEN "\033[32m"
-# define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
-# define NUM_OF_ANIMALS 4
+#define NUM_OF_ANIMALS 4
 
 void test1() {
 	std::cout << GREEN "[Test 1]" RESET << std::endl;
