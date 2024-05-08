@@ -14,7 +14,7 @@ public:
 	const std::string &getIdea(int i) const;
 	void setIdea(int i, std::string idea);
 private:
-	std::string ideas[NUM_OF_IDEAS];
+	std::string _ideas[NUM_OF_IDEAS];
 	static const std::string EMPTY_IDEA;
 };
 

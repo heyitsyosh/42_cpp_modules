@@ -13,9 +13,9 @@ public:
 	~PresidentialPardonForm();
 	void executeInDerived() const;
 private:
-	static const int grade_to_sign = 25;
-	static const int grade_to_exec = 5;
-	std::string target;
+	static const int _grade_to_sign = 25;
+	static const int _grade_to_exec = 5;
+	std::string _target;
 };
 
 #endif

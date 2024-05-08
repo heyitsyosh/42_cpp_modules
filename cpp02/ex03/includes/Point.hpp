@@ -16,11 +16,11 @@ public:
 	Point operator+(Point const &other);
 	Point operator-(Point const &other);
 private:
-	const Fixed x;
-	const Fixed y;
+	const Fixed _x;
+	const Fixed _y;
 };
 
 std::ostream &operator<<(std::ostream &ostream, const Point &value);
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

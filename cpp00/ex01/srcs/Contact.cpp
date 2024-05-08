@@ -26,21 +26,21 @@ std::string Contact::getField(const std::string &field_type) {
 }
 
 void Contact::addEntry() {
-	first_name = getField("First name");
-	last_name = getField("Last name");
-	nickname = getField("Nickname");
-	phone_number = getField("Phone number");
-	darkest_secret = getField("Darkest secret");
+	_first_name = getField("First name");
+	_last_name = getField("Last name");
+	_nickname = getField("Nickname");
+	_phone_number = getField("Phone number");
+	_darkest_secret = getField("Darkest secret");
 	std::cout << "Entry Added!" << std::endl;
 }
 
 void Contact::printSearchResult() {
-	std::cout 
-		<< "First name: " << first_name << std::endl
-		<< "Last name: " << last_name << std::endl
-		<< "Nickname: " << nickname << std::endl
-		<< "Phone number: " << phone_number << std::endl
-		<< "Darkest secret: " << darkest_secret << std::endl;
+	std::cout
+		<< "First name: " << _first_name << std::endl
+		<< "Last name: " << _last_name << std::endl
+		<< "Nickname: " << _nickname << std::endl
+		<< "Phone number: " << _phone_number << std::endl
+		<< "Darkest secret: " << _darkest_secret << std::endl;
 }
 
 void printField(const std::string &str) {
@@ -53,8 +53,8 @@ void printField(const std::string &str) {
 void Contact::printRow(int index) {
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|" << std::setw(WIDTH) << index;
-	printField(first_name);
-	printField(last_name);
-	printField(nickname);
+	printField(_first_name);
+	printField(_last_name);
+	printField(_nickname);
 	std::cout << "|" << std::endl;
 }

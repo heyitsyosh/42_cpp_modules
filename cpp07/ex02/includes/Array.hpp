@@ -7,48 +7,48 @@
 template <typename T>
 class Array  {
 public:
-	Array(unsigned int n = 0): arr_size(n) { arr = new T[n]; }
-	Array(const Array &other): arr_size(other.arr_size) {
-		arr = new T[other.arr_size];
-		for (unsigned int i = 0; i < arr_size; i++)
-			arr[i] = other.arr[i];
+	Array(unsigned int n = 0): _arr_size(n) { _arr = new T[n]; }
+	Array(const Array &other): _arr_size(other._arr_size) {
+		_arr = new T[other._arr_size];
+		for (unsigned int i = 0; i < _arr_size; i++)
+			_arr[i] = other._arr[i];
 	}
 	Array &operator=(const Array &other) {
 		if (this != &other) {
-			delete []arr;
-			arr = new T[other.arr_size];
-			arr_size = other.arr_size;
-			for (unsigned int i = 0; i < arr_size; i++)
-				arr[i] = other.arr[i];
+			delete []_arr;
+			_arr = new T[other._arr_size];
+			_arr_size = other._arr_size;
+			for (unsigned int i = 0; i < _arr_size; i++)
+				_arr[i] = other._arr[i];
 		}
 		return *this;
 	}
-	~Array() { delete []arr; }
+	~Array() { delete []_arr; }
 	T &operator[](unsigned int i) {
-		if (i >= arr_size)
+		if (i >= _arr_size)
 			throw (std::exception());
-		return (arr[i]);
+		return (_arr[i]);
 	}
 	const T &operator[](unsigned int i) const {
-		if (i >= arr_size)
+		if (i >= _arr_size)
 			throw (std::exception());
-		return (arr[i]);
+		return (_arr[i]);
 	}
-	unsigned int size() const { return arr_size; }
-	T *getArr() const { return arr; }
+	unsigned int size() const { return _arr_size; }
+	T *getArr() const { return _arr; }
 	void printArr() const { 
-		for (unsigned int i = 0; i < arr_size; i++) {
-			if (i != arr_size)
-				std::cout << arr[i] << ' ';
+		for (unsigned int i = 0; i < _arr_size; i++) {
+			if (i != _arr_size)
+				std::cout << _arr[i] << ' ';
 			else
-				std::cout << arr[i];
+				std::cout << _arr[i];
 		}
-		if (arr_size != 0)
+		if (_arr_size != 0)
 			std::endl(std::cout);
 	}
 private:
-	T *arr;
-	unsigned int arr_size;
+	T *_arr;
+	unsigned int _arr_size;
 };
 
 #endif

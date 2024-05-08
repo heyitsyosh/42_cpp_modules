@@ -4,13 +4,11 @@
 #include "Ice.hpp"
 #include "Character.hpp"
 
-Ice::Ice()
-: AMateria("ice") {
+Ice::Ice(): AMateria("ice") {
 	// std::cout << "Ice default constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &other) 
-: AMateria(other) {
+Ice::Ice(const Ice &other): AMateria(other) {
 	// std::cout << "Ice copy constructor called" << std::endl;
 }
 

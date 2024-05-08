@@ -2,41 +2,39 @@
 #include "Character.hpp"
 #include "AMateria.hpp"
 
-Character::Character()
-: ICharacter(), name(""){
+Character::Character(): ICharacter(), _name(""){
 	// std::cout << "Character default constructor called" << std::endl;
 	for(int i = 0; i < MAX_MATERIAS; i++)
-		materias[i] = NULL;
+		_materias[i] = NULL;
 }
 
-Character::Character(const std::string &name)
-: ICharacter() {
+Character::Character(const std::string &name): ICharacter() {
 	// std::cout << "Character parameterized constructor called" << std::endl;
-	this->name = name;
+	_name = name;
 	for(int i = 0; i < MAX_MATERIAS; i++)
-		materias[i] = NULL;
+		_materias[i] = NULL;
 }
 
 Character::Character(const Character &other)
-: ICharacter(other), name(other.name) {
+: ICharacter(other), _name(other._name) {
 	// std::cout << "Character copy constructor called" << std::endl;
 	for (int i = 0; i < MAX_MATERIAS; i++) {
-		if (other.materias[i])
-			materias[i] = other.materias[i]->clone();
+		if (other._materias[i])
+			_materias[i] = other._materias[i]->clone();
 		else
-			materias[i] = NULL;
+			_materias[i] = NULL;
 	}
 }
 
 Character &Character::operator=(const Character &other) {
 	// std::cout << "Character copy assignment operator called" << std::endl;
 	if (this != &other) {
-		this->name = other.name;
+		_name = other._name;
 		for (int i = 0; i < MAX_MATERIAS; i++) {
-			if (other.materias[i])
-				materias[i] = other.materias[i]->clone();
+			if (other._materias[i])
+				_materias[i] = other._materias[i]->clone();
 			else
-				materias[i] = NULL;
+				_materias[i] = NULL;
 		}
 	}
 	return *this;
@@ -45,19 +43,19 @@ Character &Character::operator=(const Character &other) {
 Character::~Character() {
 	// std::cout << "Character default destructor called" << std::endl;
 	for (int i = 0; i < MAX_MATERIAS; i++)
-		delete materias[i];
+		delete _materias[i];
 }
 
 std::string const &Character::getName() const {
-	return name;
+	return _name;
 }
 
 void Character::equip(AMateria *m) {
 	if (!m)
 		return;
 	for (int i = 0; i < MAX_MATERIAS; i++) {
-		if (!materias[i]) {
-			materias[i] = m;
+		if (!_materias[i]) {
+			_materias[i] = m;
 			std::cout << "Equipped " << m->getType() << " materia!" << std::endl;
 			return;
 		}
@@ -70,9 +68,9 @@ void Character::unequip(int idx) {
 		std::cout << "Cannot unequip, index out of range!" << std::endl;
 		return;
 	}
-	if (materias[idx]) {
-		std::cout << "Unequipped " << materias[idx]->getType() << " materia!" << std::endl;
-		materias[idx] = NULL;
+	if (_materias[idx]) {
+		std::cout << "Unequipped " << _materias[idx]->getType() << " materia!" << std::endl;
+		_materias[idx] = NULL;
 		return;
 	}
 	std::cout << "Cannot unequip, no materia equipped in slot!" << std::endl;
@@ -83,8 +81,8 @@ void Character::use(int idx, ICharacter &target) {
 		std::cout << "Cannot use, index out of range!" << std::endl;
 		return;
 	}
-	if (materias[idx])
-		materias[idx]->use(target);
+	if (_materias[idx])
+		_materias[idx]->use(target);
 	else
 		std::cout << "Cannot use, no materia equipped in slot!" << std::endl;
 }

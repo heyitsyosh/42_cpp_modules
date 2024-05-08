@@ -9,8 +9,10 @@ public:
 	~Zombie();
 	void announce() const;
 private:
-	Zombie();
+//	Variables
 	std::string _name;
+//	Functions
+	Zombie();
 };
 
 Zombie *newZombie(std::string name);

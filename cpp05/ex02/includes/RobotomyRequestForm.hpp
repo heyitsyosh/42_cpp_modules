@@ -13,9 +13,9 @@ public:
 	~RobotomyRequestForm();
 	void executeInDerived() const;
 private:
-	static const int grade_to_sign = 72;
-	static const int grade_to_exec = 45;
-	std::string target;
+	static const int _grade_to_sign = 72;
+	static const int _grade_to_exec = 45;
+	std::string _target;
 };
 
 #endif

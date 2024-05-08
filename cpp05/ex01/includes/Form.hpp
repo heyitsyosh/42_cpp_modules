@@ -34,12 +34,12 @@ public:
 			virtual const char *what() const throw();
 	};
 private:
-	static const int highest_grade = 1;
-	static const int lowest_grade = 150;
-	const std::string name;
-	bool is_signed;
-	const int grade_to_sign;
-	const int grade_to_execute;
+	static const int _highest_grade = 1;
+	static const int _lowest_grade = 150;
+	const std::string _name;
+	bool _is_signed;
+	const int _grade_to_sign;
+	const int _grade_to_execute;
 };
 
 std::ostream &operator<<(std::ostream &ostream, const Form &form);

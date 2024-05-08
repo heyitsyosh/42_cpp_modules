@@ -6,17 +6,17 @@ MateriaSource::MateriaSource()
 : IMateriaSource() {
 	// std::cout << "MateriaSource default constructor called" << std::endl;
 	for(int i = 0; i < MAX_MATERIAS; i++)
-		materias[i] = NULL;
+		_materias[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &other)
 : IMateriaSource(other) {
 	// std::cout << "MateriaSource copy constructor called" << std::endl;
 	for (int i = 0; i < MAX_MATERIAS; i++) {
-		if (other.materias[i])
-			materias[i] = other.materias[i]->clone();
+		if (other._materias[i])
+			_materias[i] = other._materias[i]->clone();
 		else
-			materias[i] = NULL;
+			_materias[i] = NULL;
 	}
 }
 
@@ -24,10 +24,10 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other) {
 	// std::cout << "MateriaSource copy assignment operator called" << std::endl;
 	if (this != &other) {
 		for (int i = 0; i < MAX_MATERIAS; i++) {
-			if (other.materias[i])
-				materias[i] = other.materias[i]->clone();
+			if (other._materias[i])
+				_materias[i] = other._materias[i]->clone();
 			else
-				materias[i] = NULL;
+				_materias[i] = NULL;
 		}
 	}
 	return *this;
@@ -36,15 +36,15 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other) {
 MateriaSource::~MateriaSource() {
 	// std::cout << "MateriaSource default destructor called" << std::endl;
 	for (int i = 0; i < MAX_MATERIAS; i++)
-		delete materias[i];
+		delete _materias[i];
 }
 
 void MateriaSource::learnMateria(AMateria *m) {
 	if (!m)
 		return;
 	for (int i = 0; i < MAX_MATERIAS; i++) {
-		if (!materias[i]) {
-			materias[i] = m;
+		if (!_materias[i]) {
+			_materias[i] = m;
 			std::cout << "Learned " << m->getType() << " materia!" << std::endl;
 			return;
 		}
@@ -54,9 +54,9 @@ void MateriaSource::learnMateria(AMateria *m) {
 
 AMateria *MateriaSource::createMateria(std::string const &type) {
 	for (int i = 0; i < MAX_MATERIAS; i++) {
-		if (materias[i] && materias[i]->getType() == type) {
+		if (_materias[i] && _materias[i]->getType() == type) {
 			std::cout << "Created " << type << " materia!" << std::endl;
-			return materias[i]->clone();
+			return _materias[i]->clone();
 		}
 	}
 	std::cout << "Cannot create " << type << " materia, not found!" << std::endl;

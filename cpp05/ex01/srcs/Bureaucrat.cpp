@@ -1,54 +1,55 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(): name("Default"), grade(lowest_grade) {}
+Bureaucrat::Bureaucrat()
+: _name("Default"), _grade(_lowest_grade) {}
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
-: name(name), grade(grade)
-{
-	if (grade < highest_grade)
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
+: _name(name), _grade(grade) {
+	if (grade < _highest_grade)
 		throw Bureaucrat::GradeTooHighException();
-	if (grade > lowest_grade)
+	if (grade > _lowest_grade)
 		throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other): name(other.name), grade(other.grade) {}
+Bureaucrat::Bureaucrat(const Bureaucrat &other)
+: _name(other._name), _grade(other._grade) {}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 	if (this != &other)
-		grade = other.grade;
+		_grade = other._grade;
 	return *this;
 }
 
 Bureaucrat::~Bureaucrat() {}
 
 std::string Bureaucrat::getName() const {
-	return name;
+	return _name;
 }
 
 int Bureaucrat::getGrade() const {
-	return grade;
+	return _grade;
 }
 
 void Bureaucrat::incrementGrade() {
-	if (grade == highest_grade)
+	if (_grade == _highest_grade)
 		throw Bureaucrat::GradeTooHighException();
-	grade--;
+	_grade--;
 }
 
 void Bureaucrat::decrementGrade() {
-	if (grade == lowest_grade)
+	if (_grade == _lowest_grade)
 		throw Bureaucrat::GradeTooLowException();
-	grade++;
+	_grade++;
 }
 
 void Bureaucrat::signForm(Form &form) const {
 	try {
 		form.beSigned(*this);
-		std::cout << name << " signed " << form.getName() << std::endl;
+		std::cout << _name << " signed " << form.getName() << std::endl;
 	}
 	catch (const std::exception &e) {
-		std::cout << name << " couldn't sign " << form.getName() 
+		std::cout << _name << " couldn't sign " << form.getName() 
 		<< " because " << e.what() << std::endl;
 	}
 }

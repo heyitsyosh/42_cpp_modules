@@ -26,13 +26,13 @@ public:
 			virtual const char *what() const throw();
 	};
 private:
-	unsigned int N;
-	std::multiset<int> numbers;
+	unsigned int _N;
+	std::multiset<int> _numbers;
 };
 
 template <typename T>
 void Span::addNumbers(const T &begin, const T &end) {
-	if (numbers.size() + std::distance(begin, end) > N)
+	if (_numbers.size() + std::distance(begin, end) > _N)
 		throw AlreadyFullException();
 	for (T i = begin; i != end; i++)
 		addNumber(*i);

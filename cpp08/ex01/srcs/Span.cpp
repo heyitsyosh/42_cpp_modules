@@ -1,31 +1,31 @@
 #include <limits>
 #include "Span.hpp"
 
-Span::Span(): N(0), numbers() {}
-Span::Span(unsigned int N): N(N), numbers() {}
-Span::Span(const Span &other): N(other.N), numbers(other.numbers) {}
+Span::Span(): _N(0), _numbers() {}
+Span::Span(unsigned int N): _N(N), _numbers() {}
+Span::Span(const Span &other): _N(other._N), _numbers(other._numbers) {}
 Span &Span::operator=(const Span &other) {
 	if (this != &other) {
-		N = other.N;
-		numbers = other.numbers;
+		_N = other._N;
+		_numbers = other._numbers;
 	}
 	return *this;
 }
 Span::~Span() {}
 
 void Span::addNumber(int num) {
-	if (numbers.size() + 1 > N)
+	if (_numbers.size() + 1 > _N)
 		throw AlreadyFullException();
-	numbers.insert(num);
+	_numbers.insert(num);
 }
 
 unsigned int Span::shortestSpan() {
-	if (numbers.size() < 2)
+	if (_numbers.size() < 2)
 		throw NoSpanException();
 	unsigned int shortest = std::numeric_limits<unsigned int>::max();
-	std::multiset<int>::iterator prev = numbers.begin();
-	std::multiset<int>::iterator current = ++numbers.begin();
-	while (current != numbers.end()) {
+	std::multiset<int>::iterator prev = _numbers.begin();
+	std::multiset<int>::iterator current = ++_numbers.begin();
+	while (current != _numbers.end()) {
 		unsigned int current_span = static_cast<unsigned int>(*current - *prev);
 		if (current_span < shortest)
 			shortest = current_span;
@@ -36,10 +36,10 @@ unsigned int Span::shortestSpan() {
 }
 
 unsigned int Span::longestSpan() {
-	if (numbers.size() < 2)
+	if (_numbers.size() < 2)
 		throw NoSpanException();
-	int min = *numbers.begin();
-	int max = *--numbers.end();
+	int min = *_numbers.begin();
+	int max = *--_numbers.end();
 	return static_cast<unsigned int>(max - min);
 }
 

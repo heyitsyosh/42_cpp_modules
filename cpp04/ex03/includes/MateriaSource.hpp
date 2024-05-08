@@ -26,7 +26,7 @@ public:
 	void learnMateria(AMateria *materia);
 	AMateria *createMateria(std::string const &type);
 private:
-	AMateria *materias[MAX_MATERIAS];
+	AMateria *_materias[MAX_MATERIAS];
 };
 
 #endif

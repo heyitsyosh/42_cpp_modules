@@ -11,16 +11,18 @@ public:
 	~PhoneBook();
 	void run();
 private:
-	Contact	contacts[MAX_CONTACTS];
-	int	entry_index;
-	int	entry_count;
+//	Variables
+	Contact _contacts[MAX_CONTACTS];
+	int _entry_index;
+	int _entry_count;
+//	Functions
 	bool getlineWrapper(std::string &command);
 	void add();
 	void search();
 	void printUsage();
 	bool strIsNumber(const std::string &str);
 	int strToInt(const std::string &str);
-	int	getIndex();
+	int getIndex();
 	void printSearchTable();
 	void printTableHeader();
 };

@@ -15,7 +15,7 @@ public:
 	void showIdeas() const;
 	void setIdea(int i, std::string idea) const;
 private:
-	Brain *brain;
+	Brain *_brain;
 };
 
 #endif

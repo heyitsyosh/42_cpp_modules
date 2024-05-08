@@ -2,25 +2,23 @@
 #include "AMateria.hpp"
 #include "Character.hpp"
 
-AMateria::AMateria()
-: type("") {
+AMateria::AMateria(): _type("") {
 	// std::cout << "AMateria default constructor called" << std::endl;
 }
 
 AMateria::AMateria(const std::string &type) {
 	// std::cout << "AMateria parameterized constructor called" << std::endl;
-	this->type = type;
+	_type = type;
 }
 
-AMateria::AMateria(const AMateria &other) 
-: type(other.type) {
+AMateria::AMateria(const AMateria &other): _type(other._type) {
 	// std::cout << "AMateria copy constructor called" << std::endl;
 }
 
 AMateria &AMateria::operator=(const AMateria &other) {
 	// std::cout << "AMateria copy assignment operator called" << std::endl;
 	if (this != &other)
-		type = other.type;
+		_type = other._type;
 	return *this;
 }
 
@@ -29,13 +27,13 @@ AMateria::~AMateria() {
 }
 
 const std::string &AMateria::getType() const {
-	return type;
+	return _type;
 }
 
 void AMateria::use(ICharacter& target) {
-	if (type == "ice")
+	if (_type == "ice")
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-	else if (type == "cure")
+	else if (_type == "cure")
 		std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 	else
 		std::cout << "Can't use, invalid type!" << std::endl;

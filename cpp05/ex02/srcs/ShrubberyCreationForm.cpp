@@ -3,10 +3,10 @@
 #include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-:	AForm("ShrubberyCreationForm", grade_to_sign, grade_to_exec), target("Default") {}
+: AForm("ShrubberyCreationForm", _grade_to_sign, _grade_to_exec), _target("Default") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-:	AForm("ShrubberyCreationForm", grade_to_sign, grade_to_exec), target(target) {}
+: AForm("ShrubberyCreationForm", _grade_to_sign, _grade_to_exec), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other): AForm(other) {}
 

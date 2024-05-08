@@ -4,12 +4,11 @@
 #include <Dog.hpp>
 #include <Brain.hpp>
 
-Dog::Dog()
-: AAnimal() {
+Dog::Dog(): AAnimal() {
 	std::cout << "Dog default constructor called" << std::endl;
-	this->type = "Dog";
+	_type = "Dog";
 	try {
-		this->brain = new Brain();
+		_brain = new Brain();
 	}
 	catch (const std::bad_alloc &e) {
 		std::cerr << e.what() << std::endl;
@@ -17,11 +16,10 @@ Dog::Dog()
 	}
 }
 
-Dog::Dog(const Dog &other) 
-: AAnimal(other), brain(NULL) {
+Dog::Dog(const Dog &other): AAnimal(other), _brain(NULL) {
 	std::cout << "Dog copy constructor called" << std::endl;
 	try {
-		this->brain = new Brain();
+		_brain = new Brain();
 	}
 	catch (const std::bad_alloc &e) {
 		std::cerr << e.what() << std::endl;
@@ -33,9 +31,9 @@ Dog &Dog::operator=(const Dog &other) {
 	std::cout << "Dog copy assignment operator called" << std::endl;
 	if (this != &other) {
 		AAnimal::operator=(other);
-		delete brain;
+		delete _brain;
 		try {
-			this->brain = new Brain(*other.brain);
+			_brain = new Brain(*other._brain);
 		}
 		catch (const std::bad_alloc &e) {
 			std::cerr << e.what() << std::endl;
@@ -47,7 +45,7 @@ Dog &Dog::operator=(const Dog &other) {
 
 Dog::~Dog() {
 	std::cout << "Dog default destructor called" << std::endl;
-	delete brain;
+	delete _brain;
 }
 
 void Dog::makeSound() const {
@@ -56,7 +54,7 @@ void Dog::makeSound() const {
 
 void Dog::showIdeas() const {
 	for (int i = 0; i < NUM_OF_IDEAS; i++) {
-		const std::string &idea = brain->getIdea(i);
+		const std::string &idea = _brain->getIdea(i);
 		if (!idea.empty())
 			std::cout << "Dog has an idea..." << idea << "!!" 
 			<< " (address:" << &idea << ")" << std::endl;
@@ -64,5 +62,5 @@ void Dog::showIdeas() const {
 }
 
 void Dog::setIdea(int i, std::string idea) const {
-	brain->setIdea(i, idea);
+	_brain->setIdea(i, idea);
 }

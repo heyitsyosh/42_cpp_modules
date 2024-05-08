@@ -1,20 +1,18 @@
 #include <iostream> //cout, endl
 #include <AAnimal.hpp>
 
-AAnimal::AAnimal() 
-: type("") {
+AAnimal::AAnimal(): _type("") {
 	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-AAnimal::AAnimal(const AAnimal &other) 
-: type(other.type) {
+AAnimal::AAnimal(const AAnimal &other): _type(other._type) {
 	std::cout << "AAnimal copy constructor called" << std::endl;
 }
 
 AAnimal &AAnimal::operator=(const AAnimal &other){
 	std::cout << "AAnimal copy assignment operator called" << std::endl;
 	if (this != &other)
-		type = other.type;
+		_type = other._type;
 	return *this;
 }
 
@@ -27,5 +25,5 @@ void AAnimal::makeSound() const {
 }
 
 std::string AAnimal::getType() const {
-	return type;
+	return _type;
 }

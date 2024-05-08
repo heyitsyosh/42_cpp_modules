@@ -22,9 +22,9 @@ void test1( void ) {
 void test2() {
 	std::cout << GREEN "[Test 2]" RESET << std::endl;
 	Fixed a;
-	Fixed  b( 2147.0f );
-	Fixed  c( 80000.0f );
-	Fixed  one( 1.0f ); 
+	Fixed b( 2147.0f );
+	Fixed c( 80000.0f );
+	Fixed one( 1.0f ); 
 	a = Fixed( 1234.4321f );
 
 	/*a = 1234 b = 2147 c = 10 d = 10*/

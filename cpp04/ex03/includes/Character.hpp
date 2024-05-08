@@ -31,8 +31,8 @@ public:
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter &target);
 private:
-	std::string name;
-	AMateria *materias[MAX_MATERIAS];
+	std::string _name;
+	AMateria *_materias[MAX_MATERIAS];
 };
 
 #endif

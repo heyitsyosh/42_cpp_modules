@@ -1,14 +1,12 @@
 #include <iostream> //cout, endl
 #include "Dog.hpp"
 
-Dog::Dog()
-: Animal() {
+Dog::Dog(): Animal() {
 	std::cout << "Dog default constructor called" << std::endl;
-	this->type = "Dog";
+	_type = "Dog";
 }
 
-Dog::Dog(const Dog &other) 
-: Animal(other) {
+Dog::Dog(const Dog &other): Animal(other) {
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 

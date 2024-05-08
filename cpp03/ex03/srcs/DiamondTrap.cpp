@@ -17,7 +17,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
 	std::cout << "DiamondTrap parameterized constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) 
+DiamondTrap::DiamondTrap(const DiamondTrap &other)
 : ClapTrap(other), ScavTrap(other), FragTrap(other), _name(other._name){
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
@@ -50,7 +50,7 @@ void DiamondTrap::attack(const std::string &target) {
 }
 
 void DiamondTrap::printAttributes() const {
-	std::cout	<< "HP:" << _hp 
-				<< " Energy Points: " << _energy_points 
+	std::cout	<< "HP:" << _hp
+				<< " Energy Points: " << _energy_points
 				<< " Attack Damage: "  <<  _attack_damage << std::endl;
 }

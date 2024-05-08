@@ -13,9 +13,9 @@ public:
 	~ShrubberyCreationForm();
 	void executeInDerived() const;
 private:
-	static const int grade_to_sign = 145;
-	static const int grade_to_exec = 137;
-	std::string target;
+	static const int _grade_to_sign = 145;
+	static const int _grade_to_exec = 137;
+	std::string _target;
 };
 
 #endif

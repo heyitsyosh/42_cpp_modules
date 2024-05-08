@@ -1,7 +1,7 @@
 #include <iostream> //cout, endl
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() 
+FragTrap::FragTrap()
 : ClapTrap() {
 	_hp = 100;
 	_energy_points = 100;
@@ -9,7 +9,7 @@ FragTrap::FragTrap()
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string &name) 
+FragTrap::FragTrap(const std::string &name)
 : ClapTrap(name) {
 	_hp = 100;
 	_energy_points = 100;

@@ -6,12 +6,12 @@
 #include "Contact.hpp"
 
 PhoneBook::PhoneBook()
-: entry_index(0), entry_count(0) {}
+: _entry_index(0), _entry_count(0) {}
 
 PhoneBook::~PhoneBook() {}
 
 void PhoneBook::run() {
-	std::string	command;
+	std::string command;
 
 	while (getlineWrapper(command)) {
 		if (command == "ADD")
@@ -26,21 +26,21 @@ void PhoneBook::run() {
 	}
 }
 
-bool	PhoneBook::getlineWrapper(std::string &command) {
+bool PhoneBook::getlineWrapper(std::string &command) {
 	std::cout << "Enter a command:  ";
 	if (!std::getline(std::cin, command))
 		std::exit(EXIT_FAILURE);
 	return true;
 }
 
-void	PhoneBook::add() {
-	contacts[entry_index % MAX_CONTACTS].addEntry();
-	entry_index++;
-	if (entry_count < MAX_CONTACTS)
-		entry_count++;
+void PhoneBook::add() {
+	_contacts[_entry_index % MAX_CONTACTS].addEntry();
+	_entry_index++;
+	if (_entry_count < MAX_CONTACTS)
+		_entry_count++;
 }
 
-bool	PhoneBook::strIsNumber(const std::string &str) {
+bool PhoneBook::strIsNumber(const std::string &str) {
 	if (str.empty())
 		return false;
 	std::size_t i = 0;
@@ -59,7 +59,7 @@ int PhoneBook::strToInt(const std::string &str) {
 	return ret;
 }
 
-int	PhoneBook::getIndex() {
+int PhoneBook::getIndex() {
 	std::string input;
 	int index;
 	std::cout << "Enter index to search for: ";
@@ -68,14 +68,14 @@ int	PhoneBook::getIndex() {
 	if (strIsNumber(input))
 	{
 		index = strToInt(input);
-		if (index < entry_count && index >= 0)
+		if (index < _entry_count && index >= 0)
 			return (index);
 	}
 	std::cout << "Not found!" << std::endl;
 	return -1;
 }
 
-void	PhoneBook::printTableHeader() {
+void PhoneBook::printTableHeader() {
 	printField("index");
 	printField("first");
 	printField("last");
@@ -83,22 +83,22 @@ void	PhoneBook::printTableHeader() {
 	std::cout << "|" << std::endl;
 }
 
-void	PhoneBook::printSearchTable() {
+void PhoneBook::printSearchTable() {
 	std::cout << "---------------------------------------------" << std::endl;
 	printTableHeader();
 	int i = 0;
-	while (i < entry_count)
+	while (i < _entry_count)
 	{
-		contacts[i].printRow(i);
+		_contacts[i].printRow(i);
 		i++;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
 }
 
-void	PhoneBook::search() {
+void PhoneBook::search() {
 	int search_index;
 
-	if (entry_count == 0)
+	if (_entry_count == 0)
 	{
 		std::cout << "No entries to search from yet!" << std::endl;
 		return;
@@ -106,14 +106,14 @@ void	PhoneBook::search() {
 	printSearchTable();
 	search_index = getIndex();
 	if (search_index == -1)
-		return ;
-	contacts[search_index].printSearchResult();
+		return;
+	_contacts[search_index].printSearchResult();
 }
 
-void	PhoneBook::printUsage() {
+void PhoneBook::printUsage() {
 	std::cout << "\n-------------------USAGE------------------" << std::endl;
 	std::cout << " ADD\t:\tAdd a contact entry" << std::endl;
 	std::cout << " SEARCH\t:\tSearch for contact" << std::endl;
 	std::cout << " EXIT\t:\tExit program" << std::endl;
-std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }

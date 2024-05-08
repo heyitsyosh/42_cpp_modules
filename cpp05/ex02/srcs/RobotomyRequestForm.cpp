@@ -4,10 +4,10 @@
 #include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
-:	AForm("RobotomyRequestForm", grade_to_sign, grade_to_exec), target("Default") {}
+: AForm("RobotomyRequestForm", _grade_to_sign, _grade_to_exec), _target("Default") {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-:	AForm("RobotomyRequestForm", grade_to_sign, grade_to_exec), target(target) {}
+: AForm("RobotomyRequestForm", _grade_to_sign, _grade_to_exec), _target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): AForm(other) {}
 
@@ -23,7 +23,7 @@ void RobotomyRequestForm::executeInDerived() const {
 	std::cout << "Bzzzzz Bzzzzz Bzzzzz" << std::endl;
 	srand(time(NULL));
 	if (rand() % 2)
-		std::cout << target << " has been robotomized!" << std::endl;
+		std::cout << _target << " has been robotomized!" << std::endl;
 	else
-		std::cout << "Robotomization of " << target << " has failed!" << std::endl;
+		std::cout << "Robotomization of " << _target << " has failed!" << std::endl;
 }

@@ -16,8 +16,8 @@ public:
 	float toFloat() const;
 	int toInt() const;
 private:
-	int raw_value;
-	static const int fractional_bits = 8;
+	int _raw_value;
+	static const int _fractional_bits = 8;
 };
 
 std::ostream &operator<<(std::ostream &ostream, const Fixed &value);
