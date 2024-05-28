@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include <Brain.hpp>
 
 const std::string Brain::EMPTY_IDEA = "";

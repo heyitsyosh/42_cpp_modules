@@ -1,4 +1,4 @@
-#include <iostream> //cout, cin, endl
+#include <iostream> //cout, cin, cerr, endl
 #include <cstdlib> //exit, EXIT_FAILURE
 #include <iomanip> //setw, right
 #include "Contact.hpp"
@@ -20,7 +20,7 @@ std::string Contact::getField(const std::string &field_type) {
 		if (!input.empty())
 			valid_input_entered = true;
 		else
-			std::cout << "Invalid input! Try again" << std::endl;
+			std::cerr << "Invalid input! Try again" << std::endl;
 	}
 	return (input);
 }

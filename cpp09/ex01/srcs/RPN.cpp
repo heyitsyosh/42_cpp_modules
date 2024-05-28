@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include <limits>
 #include <cctype> //isdigit, isspace
 #include "RPN.hpp"
@@ -93,7 +93,7 @@ void RPN::run(char *expr) {
 		std::cout << result << std::endl;
 	}
 	catch (const std::exception &e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 }
 

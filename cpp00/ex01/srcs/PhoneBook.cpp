@@ -1,4 +1,4 @@
-#include <iostream> //cout, cin, endl
+#include <iostream> //cout, cin, cerr, endl
 #include <cstdlib> //exit, EXIT_FAILURE
 #include <cctype> //isdigit
 #include <sstream> //istringstream
@@ -100,7 +100,7 @@ void PhoneBook::search() {
 
 	if (_entry_count == 0)
 	{
-		std::cout << "No entries to search from yet!" << std::endl;
+		std::cerr << "No entries to search from yet!" << std::endl;
 		return;
 	}
 	printSearchTable();
@@ -111,9 +111,9 @@ void PhoneBook::search() {
 }
 
 void PhoneBook::printUsage() {
-	std::cout << "\n-------------------USAGE------------------" << std::endl;
-	std::cout << " ADD\t:\tAdd a contact entry" << std::endl;
-	std::cout << " SEARCH\t:\tSearch for contact" << std::endl;
-	std::cout << " EXIT\t:\tExit program" << std::endl;
-	std::cout << "---------------------------------------------" << std::endl;
+	std::cerr << "\n-------------------USAGE------------------" << std::endl;
+	std::cerr << " ADD\t:\tAdd a contact entry" << std::endl;
+	std::cerr << " SEARCH\t:\tSearch for contact" << std::endl;
+	std::cerr << " EXIT\t:\tExit program" << std::endl;
+	std::cerr << "---------------------------------------------" << std::endl;
 }

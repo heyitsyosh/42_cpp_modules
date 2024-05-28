@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include <cstdlib> //rand, srand, NULL
 #include <ctime> //time
 #include "A.hpp"
@@ -26,7 +26,7 @@ void identify(Base *p) {
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C";
 	else
-		std::cout << "Error: unknown object type";
+		std::cerr << "Error: unknown object type";
 }
 
 void identify(Base &p) {
@@ -47,7 +47,7 @@ void identify(Base &p) {
 		std::cout << "C";
 	}
 	catch (const std::exception &e) {
-		std::cout << "Error: unknown type";
+		std::cerr << "Error: unknown type";
 	}
 }
 

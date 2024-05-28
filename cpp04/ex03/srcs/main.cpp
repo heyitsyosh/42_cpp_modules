@@ -1,4 +1,4 @@
-#include <iostream> //cout, cerr, endl
+#include <iostream> //cout, endl
 // #include <cstdlib> //system
 #include "AMateria.hpp"
 #include "Character.hpp"

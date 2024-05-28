@@ -19,7 +19,7 @@ void test2() {
 		Form invalid_form("Invalid Form", 0, 150);
 	}
 	catch (const std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

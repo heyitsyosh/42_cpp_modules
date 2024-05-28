@@ -17,6 +17,6 @@ make re     //delete .o and executable, then recompile
 ```
 
 ## Overview of exercise objectives:
-**ex00**: create `easyfind` template that finds an integer from a iterator for a container.  
+**ex00**: Create `easyfind` template that finds an integer from a iterator for a container.  
 **ex01**: Intergers are stored in a container, `shortestSpan`, `longestSpan` functions calculate the respective values.  
 **ex02**: Create `MutantStack` class, an iterable implementation of `std::stack`.  

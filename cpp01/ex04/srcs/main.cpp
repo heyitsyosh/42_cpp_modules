@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cerr, endl
 #include <fstream> //ifstream, ofstream, open, close, rdbuf
 #include <sstream> //stringstream, rdbuf
 #include "Main.hpp"
@@ -6,7 +6,7 @@
 int main(int argc, char **argv) {
 	if (argc != 4)
 	{
-		std::cout	<< "Usage:\t\t./mySed <file> <old-text> <new-text>\n"
+		std::cerr	<< "Usage:\t\t./mySed <file> <old-text> <new-text>\n"
 					<< "Description:\t"
 					<< "Replaces instances of 'old-text' with 'new-text' within the specified file.\n"
 					<< "\t\tText is outputted to <file>.replace.\n"

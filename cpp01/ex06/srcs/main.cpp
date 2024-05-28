@@ -1,10 +1,10 @@
-#include <iostream> //cout, endl
+#include <iostream> //cerr, endl
 #include "Harl.hpp"
 
 int main(int argc, char **argv) {
 	if (argc != 2)
 	{
-		std::cout << "Usage: ./harlFilter <filter_level>" << std::endl;
+		std::cerr << "Usage: ./harlFilter <filter_level>" << std::endl;
 		return (1);
 	}
 	Harl harl;

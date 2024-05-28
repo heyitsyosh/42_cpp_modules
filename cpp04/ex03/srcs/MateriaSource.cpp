@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include "AMateria.hpp"
 #include "MateriaSource.hpp"
 
@@ -49,7 +49,7 @@ void MateriaSource::learnMateria(AMateria *m) {
 			return;
 		}
 	}
-	std::cout << "Cannot learn " << m->getType() << " materia, no more slots available!" << std::endl;
+	std::cerr << "Cannot learn " << m->getType() << " materia, no more slots available!" << std::endl;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type) {
@@ -59,6 +59,6 @@ AMateria *MateriaSource::createMateria(std::string const &type) {
 			return _materias[i]->clone();
 		}
 	}
-	std::cout << "Cannot create " << type << " materia, not found!" << std::endl;
+	std::cerr << "Cannot create " << type << " materia, not found!" << std::endl;
 	return NULL;
 }

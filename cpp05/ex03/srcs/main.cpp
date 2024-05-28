@@ -14,7 +14,7 @@ void testForm(const std::string &form_name, const std::string &target) {
 		delete form;
 	}
 	catch (const std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

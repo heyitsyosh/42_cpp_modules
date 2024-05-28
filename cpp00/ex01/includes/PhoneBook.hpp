@@ -11,7 +11,7 @@ public:
 	~PhoneBook();
 	void run();
 private:
-//	Variables
+//	Data members
 	Contact _contacts[MAX_CONTACTS];
 	int _entry_index;
 	int _entry_count;

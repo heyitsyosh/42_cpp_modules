@@ -4,7 +4,7 @@
 // STL headers
 #include <string>
 #include <exception>
-#include <iostream> //ostream, (cout, endl)
+#include <iostream> //ostream, (cout, cerr, endl)
 
 // Forward declarations
 class AForm;

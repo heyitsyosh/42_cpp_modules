@@ -9,7 +9,7 @@ public:
 	~Zombie();
 	void announce() const;
 private:
-//	Variables
+//	Data members
 	std::string _name;
 //	Functions
 	Zombie();

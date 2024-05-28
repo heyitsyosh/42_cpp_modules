@@ -4,7 +4,7 @@
 // STL headers
 #include <string>
 #include <exception>
-#include <iostream> //ostream
+#include <iostream> //ostream, (cout, cerr, endl)
 
 class Bureaucrat {
 public:

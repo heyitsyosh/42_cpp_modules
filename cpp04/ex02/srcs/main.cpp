@@ -1,4 +1,4 @@
-#include <iostream> //cout, cerr, endl
+#include <iostream> //cout, endl
 #include <new> //bad_alloc
 // #include <cstdlib> //system
 #include <AAnimal.hpp>

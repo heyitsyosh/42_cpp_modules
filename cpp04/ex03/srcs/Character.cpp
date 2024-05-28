@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include "Character.hpp"
 #include "AMateria.hpp"
 
@@ -60,12 +60,12 @@ void Character::equip(AMateria *m) {
 			return;
 		}
 	}
-	std::cout << "Cannot equip " << m->getType() << " materia, no more slots available!" << std::endl;
+	std::cerr << "Cannot equip " << m->getType() << " materia, no more slots available!" << std::endl;
 }
 
 void Character::unequip(int idx) {
 	if (idx < 0 || MAX_MATERIAS <= idx) {
-		std::cout << "Cannot unequip, index out of range!" << std::endl;
+		std::cerr << "Cannot unequip, index out of range!" << std::endl;
 		return;
 	}
 	if (_materias[idx]) {
@@ -73,16 +73,16 @@ void Character::unequip(int idx) {
 		_materias[idx] = NULL;
 		return;
 	}
-	std::cout << "Cannot unequip, no materia equipped in slot!" << std::endl;
+	std::cerr << "Cannot unequip, no materia equipped in slot!" << std::endl;
 }
 
 void Character::use(int idx, ICharacter &target) {
 	if (idx < 0 || MAX_MATERIAS <= idx) {
-		std::cout << "Cannot use, index out of range!" << std::endl;
+		std::cerr << "Cannot use, index out of range!" << std::endl;
 		return;
 	}
 	if (_materias[idx])
 		_materias[idx]->use(target);
 	else
-		std::cout << "Cannot use, no materia equipped in slot!" << std::endl;
+		std::cerr << "Cannot use, no materia equipped in slot!" << std::endl;
 }

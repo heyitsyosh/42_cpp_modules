@@ -53,7 +53,7 @@ void test4() {
 		std::cout << arr_int[5] << std::endl;
 	}
 	catch (const std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include <limits>
 #include <vector>
 #include "Span.hpp"
@@ -56,13 +56,13 @@ void test4() {
 		sp.addNumber(0);
 		sp.addNumber(0);
 	} catch (const std::exception& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	try {
 		std::cout << "Calculating shortest span from a span with 1 number...\n";
 		std::cout << sp.shortestSpan() << "\n";
 	} catch (const std::exception& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 }
 

@@ -21,7 +21,7 @@ void test2() {
 		std::cout << winston << std::endl;
 	}
 	catch (const std::exception &e){
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -36,7 +36,7 @@ void test3() {
 		std::cout << winston << std::endl;
 	}
 	catch (const std::exception &e){
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

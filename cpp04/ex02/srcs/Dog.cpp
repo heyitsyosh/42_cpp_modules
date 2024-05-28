@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include <new> //bad_alloc
 #include <cstdlib> //exit
 #include <Dog.hpp>

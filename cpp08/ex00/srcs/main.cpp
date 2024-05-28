@@ -1,4 +1,4 @@
-#include <iostream> //cout, endl
+#include <iostream> //cout, cerr, endl
 #include <string>
 #include <vector>
 #include <list>
@@ -21,7 +21,7 @@ void testList() {
 		}
 	}
 	catch (const std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -39,7 +39,7 @@ void testVector() {
 		}
 	}
 	catch (const std::exception &e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 
@@ -56,7 +56,7 @@ void testConstVector() {
 		}
 	}
 	catch (const NotFoundException& e) {
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 }
 

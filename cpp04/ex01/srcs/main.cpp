@@ -1,4 +1,4 @@
-#include <iostream> //cout, cerr, endl
+#include <iostream> //cout, endl
 #include <sstream> //stringstream
 // #include <cstdlib> //system
 #include "Animal.hpp"

@@ -36,5 +36,5 @@ void AMateria::use(ICharacter& target) {
 	else if (_type == "cure")
 		std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 	else
-		std::cout << "Can't use, invalid type!" << std::endl;
+		std::cerr << "Can't use, invalid type!" << std::endl;
 }

@@ -13,7 +13,7 @@ public:
 	void printRow(int index);
 	void printSearchResult();
 private:
-//	Variables
+//	Data members
 	std::string _first_name;
 	std::string _last_name;
 	std::string _nickname;
