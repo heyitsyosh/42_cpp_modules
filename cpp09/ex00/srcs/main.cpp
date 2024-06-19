@@ -10,8 +10,7 @@ int main(int argc, char **argv) {
 	BitcoinExchange btc;
 	try {
 		btc.processPriceDatabase();
-		(void)argv;
-		// btc.processInputFile(argv[1]);
+		btc.processInputFile(argv[1]);
 		btc.exchangeAndOutput();
 	}
 	catch (const std::exception &e) {
