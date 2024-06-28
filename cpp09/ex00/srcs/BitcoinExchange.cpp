@@ -1,8 +1,13 @@
 #include <cctype> //isdigit
+#include <limits>
 #include <fstream> //ifstream
 #include <sstream> //istringstream
+#include <iostream> //cout, cerr
 #include <exception>
 #include "BitcoinExchange.hpp"
+
+#define RED "\033[31m"
+#define RESET "\033[0m"
 
 static bool compareDates(const t_date &lhs, const t_date &rhs) {
 	if (lhs.year != rhs.year)
@@ -12,16 +17,22 @@ static bool compareDates(const t_date &lhs, const t_date &rhs) {
 	return lhs.day < rhs.day;
 }
 
+bool s_date::operator==(const s_date &other) const {
+	return year == other.year && month == other.month && day == other.day;
+}
+
+bool s_date::operator!=(const s_date &other) const {
+	return !(*this == other);
+}
+
 BitcoinExchange::BitcoinExchange(): _data(compareDates) {}
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other)
-: _data(compareDates), _input(other._input) {
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other): _data(compareDates) {
 	_data = other._data;
 }
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
 	if (this != &other) {
 		_data = std::map<t_date, double, bool (*)(const t_date&, const t_date&)>(compareDates);
 		_data = other._data;
-		_input = other._input;
 	}
 	return *this;
 }
@@ -29,7 +40,7 @@ BitcoinExchange::~BitcoinExchange(){}
 
 void BitcoinExchange::invalidFormatErr(int idx) const {
 	std::ostringstream error_msg;
-	error_msg << "Error: invalid format detected at line " << idx << " in " << PATH_TO_DATA;
+	error_msg << RED "invalid format detected at line " << idx << " in " << PATH_TO_DATA RESET;
 	throw std::runtime_error(error_msg.str());
 }
 
@@ -40,8 +51,8 @@ void BitcoinExchange::validateFirstLine(
 {
 	if (line != str) {
 		throw std::runtime_error(
-			"Error: invalid format detected\n       "
-			"first line of "+ file + " should be \"" + str + "\"");
+			"invalid format detected.\n       "
+			"first line of "+ file + " must be \"" + str + "\"");
 	}
 }
 
@@ -78,12 +89,12 @@ t_date BitcoinExchange::parseDate(const std::string &date_str, int idx) const {
 		invalidFormatErr(idx);
 	return date;
 }
-#include <iostream>
+
 double BitcoinExchange::parsePrice(const std::string &price_str, int idx) const {
 	double price;
 	std::istringstream ss(price_str);
 	ss >> price;
-	if (ss.fail() || ss.peek() != std::istringstream::traits_type::eof() 
+	if (ss.fail() || ss.peek() != std::istringstream::traits_type::eof() || price < 0.0
 		|| (price_str[0] != '.' && !std::isdigit(price_str[0])))
 		invalidFormatErr(idx);
 	return price;
@@ -92,10 +103,9 @@ double BitcoinExchange::parsePrice(const std::string &price_str, int idx) const 
 void BitcoinExchange::processPriceDatabase() {
 	std::ifstream database(PATH_TO_DATA, std::ios_base::in);
 	if (!database.is_open())
-		throw std::runtime_error(std::string("Error: could not open file ") + PATH_TO_DATA);
+		throw std::runtime_error(std::string("could not open file ") + PATH_TO_DATA);
 
-	std::string line, date, price;
-
+	std::string line;
 	std::getline(database, line);
 	validateFirstLine(line, "date,exchange_rate", PATH_TO_DATA);
 
@@ -104,6 +114,7 @@ void BitcoinExchange::processPriceDatabase() {
 		if (line.empty())
 			break;
 		idx++;
+		std::string date, price;
 		std::istringstream ln(line);
 		if (!std::getline(ln, date, ',') || !std::getline(ln, price))
 			invalidFormatErr(idx);
@@ -112,26 +123,63 @@ void BitcoinExchange::processPriceDatabase() {
 	database.close();
 }
 
-// void BitcoinExchange::processInputFile(const std::string &filename) {
-// 	std::ifstream input(filename, std::ios_base::in);
-// 	if (!input.is_open())
-// 		throw std::runtime_error("Error: could not open file" + filename);
-
-// 	std::string line;
-// 	std::getline(input, line);
-// 	validateFirstLine(line, "date | value", filename);
-
-// 	int line_number = 1;
-// 	while (std::getline(input, line)) {
-		
-// 	}
-// 	input.close();
-// }
-
-void BitcoinExchange::exchangeAndOutput() {
-
+double BitcoinExchange::getRate(std::string date_str) const {
+	if (!date_str.empty())
+		date_str.erase(date_str.size() - 1);
+	t_date date;
+	try {
+		date = parseDate(date_str, 0);
+		std::map<t_date, double, bool (*)(const t_date&, const t_date&)>::const_iterator it;
+		it = _data.lower_bound(date);
+		if (it == _data.end() || (it != _data.begin() && it->first != date))
+			--it;
+		return it->second;
+	}
+	catch (const std::exception &e) {
+		throw std::runtime_error("bad date input => " + date_str);
+	}
+	return 0.0;
 }
 
-// Error: not a positive number
-// Error: bad input => 2001-42-42
-// Error: too large a number.
+double BitcoinExchange::getResult(double rate, std::string amount_str) const {
+	if (amount_str.empty())
+		throw std::runtime_error("bad amount input => " + amount_str);
+	amount_str.erase(amount_str.begin());
+	double amount;
+	std::istringstream ss(amount_str);
+	ss >> amount;
+	if (ss.fail() || ss.peek() != std::istringstream::traits_type::eof() || amount < 0)
+		throw std::runtime_error("not a positive number");
+	if (amount > std::numeric_limits<int>::max())
+		throw std::runtime_error("too large a number");
+	if (rate != 0 && amount > std::numeric_limits<double>::max() / rate)
+		throw std::runtime_error("overflow detected during exchange calutation");
+	return rate * amount;
+}
+
+void BitcoinExchange::exchangeInput(const std::string &filename) {
+	std::ifstream input(filename.c_str(), std::ios_base::in);
+	if (!input.is_open())
+		throw std::runtime_error("could not open file" + filename);
+
+	std::string line;
+	std::getline(input, line);
+	validateFirstLine(line, "date | value", filename);
+
+	while (std::getline(input, line)) {
+		try {
+			std::string date, amount;
+			std::istringstream ln(line);
+			if (!std::getline(ln, date, '|') || !std::getline(ln, amount))
+				throw std::runtime_error("bad input => " + line);
+			double rate = getRate(date);
+			double result = getResult(rate, amount);
+			std::cout << date << "=>" << amount << " = " << result << std::endl;
+		}
+		catch (const std::exception &e) {
+			std::cerr << RED "Error: " << e.what() << "." RESET << std::endl;
+			continue;
+		}
+	}
+	input.close();
+}

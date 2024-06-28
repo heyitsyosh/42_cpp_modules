@@ -2,7 +2,6 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <map>
-#include <ctime> //tm, strftime
 #include <string>
 
 #ifndef PATH_TO_DATA
@@ -13,6 +12,8 @@ typedef struct s_date {
 	int day;
 	int month;
 	int year;
+	bool operator==(const s_date &other) const;
+	bool operator!=(const s_date &other) const;
 } t_date;
 
 struct compareDate;
@@ -24,11 +25,9 @@ public:
 	BitcoinExchange &operator=(const BitcoinExchange &other);
 	~BitcoinExchange();
 	void processPriceDatabase();
-	// void processInputFile(const std::string &filename);
-	void exchangeAndOutput();
+	void exchangeInput(const std::string &filename);
 private:
 	std::map<t_date, double, bool (*)(const t_date&, const t_date&)> _data;
-	std::map<int, double> _input;
 	bool strIsNumberic(const std::string &date_str) const;
 	void validateFirstLine(
 			const std::string &line, const std::string &str, const std::string &file) const;
@@ -36,6 +35,8 @@ private:
 	void invalidFormatErr(int idx) const;
 	t_date parseDate(const std::string &date_str, int idx) const ;
 	double parsePrice(const std::string &price_str, int idx) const ;
+	double getRate(std::string date_str) const;
+	double getResult(double rate, std::string amount_str) const;
 };
 
 #endif
