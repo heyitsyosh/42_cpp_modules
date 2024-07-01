@@ -150,7 +150,7 @@ double BitcoinExchange::getResult(double rate, std::string amount_str) const {
 	ss >> amount;
 	if (ss.fail() || ss.peek() != std::istringstream::traits_type::eof() || amount < 0)
 		throw std::runtime_error("not a positive number");
-	if (amount > std::numeric_limits<int>::max())
+	if (amount > 1000)
 		throw std::runtime_error("too large a number");
 	if (rate != 0 && amount > std::numeric_limits<double>::max() / rate)
 		throw std::runtime_error("overflow detected during exchange calutation");
