@@ -27,7 +27,7 @@ public:
 	void processPriceDatabase();
 	void exchangeInput(const std::string &filename);
 private:
-	std::map<t_date, double, bool (*)(const t_date&, const t_date&)> _data;
+//	Functions
 	bool strIsNumberic(const std::string &date_str) const;
 	void validateFirstLine(
 			const std::string &line, const std::string &str, const std::string &file) const;
@@ -37,6 +37,8 @@ private:
 	double parsePrice(const std::string &price_str, int idx) const ;
 	double getRate(std::string date_str) const;
 	double getResult(double rate, std::string amount_str) const;
+//	Data members
+	std::map<t_date, double, bool (*)(const t_date&, const t_date&)> _data;
 };
 
 #endif

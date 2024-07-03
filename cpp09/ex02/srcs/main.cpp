@@ -3,8 +3,8 @@
 #include "PmergeMe.hpp"
 
 int main(int argc, char **argv) {
-	if (argc < 2) {
-		std::cerr	<< "Error: invalid arguments\n"
+	if (argc < 3) {
+		std::cerr	<< "Error: Not enough parameters\n"
 					<< "Usage: ./PmergeMe <positive_integers_to_sort>" << std::endl;
 		return 1;
 	}

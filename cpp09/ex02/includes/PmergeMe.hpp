@@ -14,11 +14,13 @@ public:
 	void parseNumbers(int argc, char **argv);
 	void sortNumbers();
 private:
-	std::list<int> _lst;
-	std::vector<int> _vec;
+//	Functions
 	int parseNumber(const std::string &num_str) const; 
 	void printTimeTaken(
 			size_t size, const std::string &type, double time) const;
+//	Data members
+	std::list<int> _lst;
+	std::vector<int> _vec;
 };
 
 template <typename Container>

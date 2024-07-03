@@ -54,17 +54,26 @@ void PmergeMe::printTimeTaken(
 		"with std::" << type << " : " << time << " us" << std::endl;
 }
 
+
+void PmergeMe::mergeInsertSort(std::list<int> &lst) {
+
+}
+
+void PmergeMe::mergeInsertSort(std::vector<int> &vec) {
+	
+}
+
 void PmergeMe::sortNumbers() {
 	std::cout << "Before: ";
 	printContainer(_lst);
 
 	std::clock_t start = std::clock();
-	_lst.sort();
+	mergeInsertSort(_lst);
 	std::clock_t end = std::clock();
 	double time_lst = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000.0;
 
 	start = std::clock();
-	std::sort(_vec.begin(), _vec.end());
+	mergeInsertSort(_vec);
 	end = std::clock();
 	double time_vec = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000.0;
 
@@ -74,3 +83,5 @@ void PmergeMe::sortNumbers() {
 	printTimeTaken(_lst.size(), "lst", time_lst);
 	printTimeTaken(_vec.size(), "vec", time_vec);
 }
+
+// `shuf -i 1-1000 -n 3000 | tr "\n" " " `
