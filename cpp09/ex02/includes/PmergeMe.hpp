@@ -18,6 +18,9 @@ private:
 	int parseNumber(const std::string &num_str) const; 
 	void printTimeTaken(
 			size_t size, const std::string &type, double time) const;
+	void fordJohnsonSort(std::list<int> &lst);
+	void fordJohnsonSort(std::vector<int> &vec);
+	std::vector<int> generateJacobsthalNumbers(int n) const;
 //	Data members
 	std::list<int> _lst;
 	std::vector<int> _vec;
