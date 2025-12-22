@@ -6,7 +6,7 @@
 Nine modules that introduce various C++ concepts through exercises.  
 (Many of the exercises are based on fictional situations rather than practical problems.)  
 
-## Module overview:
+## Overview:
 | Module | Concepts covered |
 ---|---|
 [**00**](https://github.com/heyitsyosh/42_cpp_modules/tree/master/module00#readme) | Namespaces, classes, member functions, stdio streams, initialization lists, static, const, other C++ basics |
