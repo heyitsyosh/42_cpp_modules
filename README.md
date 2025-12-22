@@ -1,5 +1,5 @@
 <h1 align="center">
-	CPP Modules
+	CPP modules
 </h1>
 
 ## Description:
