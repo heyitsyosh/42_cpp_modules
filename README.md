@@ -3,8 +3,8 @@
 </h1>
 
 ## Description:
-Nine modules that introduce various C++ concepts through excercises.  
-(Many of the excercises are based on fictional situations rather than practical problems.)  
+Nine modules that introduce various C++ concepts through exercises.  
+(Many of the exercises are based on fictional situations rather than practical problems.)  
 
 ## Module overview:
 | Module | Concepts covered |
