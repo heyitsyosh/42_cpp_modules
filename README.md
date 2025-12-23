@@ -9,7 +9,7 @@ Nine modules that introduce various C++ concepts through exercises.
 ## Overview:
 | Module | Concepts covered |
 :---:|:---|
-[**00**](https://github.com/heyitsyosh/42_cpp_modules/tree/master/module00#readme) | Namespaces, classes, member functions, stdio streams, initialization lists, static, const, other C++ basics |
+[**00**](https://github.com/heyitsyosh/42_cpp_modules/tree/master/module00#readme) | Namespaces, classes, member functions, stdio streams, static, const, other C++ basics |
 [**01**](https://github.com/heyitsyosh/42_cpp_modules/tree/master/module01#readme) | Memory allocation, pointers to members, references, switch statement |
 [**02**](https://github.com/heyitsyosh/42_cpp_modules/tree/master/module02#readme) | Ad-hoc polymorphism, operator overloading, Orthodox Canonical class form |
 [**03**](https://github.com/heyitsyosh/42_cpp_modules/tree/master/module03#readme) | Inheritance |
