@@ -17,7 +17,9 @@ make re     //delete .o and executable, then recompile
 ```
 
 ## Overview of exercise objectives:
-**ex00**: Use derived class through a pointer to the base class - `subtype polymorphism`.  
-**ex01**: Make deep copy in copy constructor and copy assignment operator overload.  
-**ex02**: Create a non-instantiatable/abstract class.  
-**ex03**: Use pure abstract class like an `interface`.
+| # | Objective |
+|:---:|:---|
+ex00 | Demonstrate `subtype polymorphism` by using a derived class through a base-class pointer. |
+ex01 | Implement deep copying in the copy constructor and copy assignment operator. |
+ex02 | Create a non-instantiatable abstract class. |
+ex03 | Use a pure abstract class as an `interface`. |

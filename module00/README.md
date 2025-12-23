@@ -17,8 +17,8 @@ make re     //delete .o and executable, then recompile
 ```
 
 ## Overview of exercise objectives:
-**ex00**: Implement a "megaphone" that prints string in uppercase.  
-**ex01**: Implement a "phonebook" that stores 8 contacts.  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-Repl processes add, search, quit commands.  
-**ex02**: Deduce .cpp implementation based on provided .hpp, test.cpp, and output.
+| # | Objective |
+|:---:|:---|
+ex00 | Print a given string in uppercase. |
+ex01 | Implement a fixed-size "phonebook" (8 contacts) with a REPL supporting `add`, `search`, and `quit`. |
+ex02 | Implement the missing `.cpp` file based on a provided `.hpp`, `test.cpp`, and expected output. |

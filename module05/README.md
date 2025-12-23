@@ -18,6 +18,6 @@ make re     //delete .o and executable, then recompile
 
 ## Overview of exercise objectives:
 The 4 exercises focus on the use of `custom exceptions`.  
-"Bureaucrat", "Form", and "Intern" classes that interact with each other are implemented.  
-The main functions test these interactions with different scenarios.  
-For example, a bureaucrat signs/executes a form if it has the right authorizations.
+The implemented classes such as `Bureaucrat`, `Form`, and `Intern` interact with one another.  
+The main functions test these interactions across different scenarios.  
+For example, a bureaucrat signs/executes a form only if it has the required authorizations.

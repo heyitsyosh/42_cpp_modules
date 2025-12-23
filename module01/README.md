@@ -17,10 +17,12 @@ make re     //delete .o and executable, then recompile
 ```
 
 ## Overview of exercise objectives:
-**ex00**: Use `new` and `delete`.  
-**ex01**: Use `new` and `delete` for array.  
-**ex02**: Learn about the difference between pointers and references.  
-**ex03**: Make getters and setters.  
-**ex04**: Use useful `string` library functions.  
-**ex05**: Precursor of next exercise, use `for/if` in a clean manner.  
-**ex06**: Use switch statement.
+| # | Objective |
+|:---:|:---|
+ex00 | Allocate and free memory using `new` and `delete`. |
+ex01 | Allocate and free arrays using `new[]` and `delete[]`. |
+ex02 | Understand the difference between pointers and references. |
+ex03 | Implement class getters and setters. |
+ex04 | Use common functions from the C++ `string` library. |
+ex05 | Write clean control flow using `for` loops and `if` statements. |
+ex05 | Use a switch statement. |

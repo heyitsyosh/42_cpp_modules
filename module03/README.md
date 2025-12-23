@@ -17,7 +17,9 @@ make re     //delete .o and executable, then recompile
 ```
 
 ## Overview of exercise objectives:
-**ex00**: Create "ClapTrap" class. Setup for following exercises.  
-**ex01**: Create derived class that inherits from Claptrap.  
-**ex02**: Create derived class that inherits from Claptrap.  
-**ex03**: Solve `diamond inheritance problem` by using virtual inheritance.  
+| # | Objective |
+|:---:|:---|
+ex00 | Implement the `ClapTrap` base class used in the following exercises. |
+ex01 | Implement a derived class that inherits from `ClapTrap`. |
+ex02 | Implement another derived class that inherits from `ClapTrap`. |
+ex03 | Solve the `diamond inheritance problem` by using virtual inheritance. |

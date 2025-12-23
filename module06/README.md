@@ -17,7 +17,8 @@ make re     //delete .o and executable, then recompile
 ```
 
 ## Overview of exercise objectives:
-**ex00**: Use `static cast` to create a converter for 4 scalar types (char, int, float, double).  
-The program should display the value of a variable converted to each type.  
-**ex01**: Use `reinterpret cast` to serialize Data* to uintptr_t, then to deseralize uintptr_t to Data*.  
-**ex02**: Use behavior of `dynamic cast` to identify derived class type from a pointer to the base class.
+| # | Objective |
+|:---:|:---|
+| ex00 | Use `static_cast` to implement a converter between scalar types (`char`, `int`, `float`, `double`). |
+| ex01 | Use `reinterpret_cast` to serialize a `Data*` to `uintptr_t`, then deserialize it back to a `Data*`. |
+| ex02 | Use `dynamic_cast` to identify the actual derived type from a base-class pointer. |

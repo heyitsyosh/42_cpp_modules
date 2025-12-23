@@ -17,15 +17,9 @@ make re     //delete .o and executable, then recompile
 ```
 
 ## Overview of exercise objectives:
-**ex00**: Make class in `Orthodox Canonical form`.  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-*(constructor, copy constructor, copy assignment operator, destructor)*  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-Learn about accuracy vs. precision.  
-**ex01**: Implement `fixed point number` conversion from int and float.  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-Overload insertion operator for class instance.  
-**ex02**: Overload arithmetic operators for class instance.  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-*(+, -, /, \*, ++x, --x, x++, x--)*  
-**ex03**: Utilize overloads to determine if a given point is within a triangle (made by 3 given points). 
+| # | Objective |
+|:---:|:---|
+ex00 | Implement a class in Orthodox Canonical Form (constructor, copy constructor, copy assignment operator, destructor). Learn the difference between accuracy and precision. |
+ex01 | Implement fixed-point number conversion from `int` and `float`. Overload the insertion (`<<`) operator for the class. |
+ex02 | Overload arithmetic and increment/decrement operators. *(+, -, /, \*, ++x, --x, x++, x--)* |
+ex03 | Use operator overloads to determine whether a point lies inside a triangle defined by three points. |
